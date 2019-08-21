@@ -404,8 +404,8 @@ header .icon-modal {
   margin: auto;
   width: 33%;
   opacity: 0;
-  -webkit-transition: opacity 1s ease;
-  transition: opacity 1s ease;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
 }
 
 main {

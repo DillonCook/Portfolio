@@ -36,11 +36,15 @@ let modalText = document.createElement('p');
 icons.forEach((icon) => {
   // hover over icons - displays info
   icon.addEventListener('mouseenter', () => {
-
       modal.classList.add('icon-modal');      
-      modal.appendChild(modalText); 
-      modal.style.opacity = "1";
-      icon.parentNode.append(modal);
+      modal.appendChild(modalText);
+      icon.parentNode.append(modal); 
+      // Time out allows fade in of modals
+      setTimeout(() => {
+        modal.style.opacity = "1";
+        // set to 0 so opacity instantly triggers upon creaton of modal
+      }, 0);
+      
       
 
     if (icon.classList[0] == "devicon-html5-plain") {
