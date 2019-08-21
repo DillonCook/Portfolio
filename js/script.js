@@ -38,8 +38,10 @@ icons.forEach((icon) => {
   icon.addEventListener('mouseenter', () => {
 
       modal.classList.add('icon-modal');      
-      modal.appendChild(modalText);      
+      modal.appendChild(modalText); 
+      modal.style.opacity = "1";
       icon.parentNode.append(modal);
+      
 
     if (icon.classList[0] == "devicon-html5-plain") {
       modalText.textContent = "HTML5";
@@ -57,6 +59,7 @@ icons.forEach((icon) => {
   });
   // mouse leaves - info dies
   icon.addEventListener('mouseleave', () => {
-      icon.parentNode.removeChild(modal);
+    modal.style.opacity = "0";
+      // setTimeout(() => icon.parentNode.removeChild(modal), 3000); 
   });
 });

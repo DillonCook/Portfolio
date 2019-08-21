@@ -36,6 +36,7 @@ header {
     .icon {
         font-size: 2em;
         margin: 0 10px;
+        padding: 5px;
     }
     p {
         color: $blue;
@@ -48,6 +49,8 @@ header {
     .icon-modal {
         margin: auto;
         width: 33%;
+        opacity: 0;
+        transition: opacity 1s ease;
     }
 }
 
@@ -89,6 +92,7 @@ main {
                 transition: all .5s ease;
                 z-index: 9;
                 font-weight: bold;
+                opacity: 0;
             }
             .image-container{ // thumbnail's individual container to hold thumbnail and overlay
                 position: relative;
