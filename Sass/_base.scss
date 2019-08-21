@@ -1,0 +1,146 @@
+html {
+    font-family: $primary-font;
+}
+.icon {
+    transition: color .3s ease;
+    color: rgba(0, 0, 0, 0.85);
+}
+.icon:hover {
+    color: rgb(255, 255, 255);
+}
+
+header {
+    position: relative;
+    text-align: center;
+    background-image: url(../images/header-image-lg.jpg);
+    background-color: lightgray;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 85vh;
+    color: white;
+    h1 {
+        margin-top: 0;
+        padding-top: 223px;
+        font-size: 4em;
+        margin-bottom: 10px;
+    }
+    h2 {
+        font-size: 3em;
+        margin-top: 10px;
+    }
+    h3 {
+        font-size: 2.5em;
+        margin-top: 100px;
+    }
+    .icon {
+        font-size: 2em;
+        margin: 0 10px;
+    }
+    p {
+        color: $blue;
+        font-weight: 600;
+        background-color: rgba(0, 0, 0, 0.6);
+        font-size: 2rem;
+        border-radius: 10px;
+        padding: 5px;
+    }
+    .icon-modal {
+        margin: auto;
+        width: 33%;
+    }
+}
+
+main {
+    background-color: lightgray;
+    h2 {
+        margin-top: 0;
+        padding-top: 30px;
+        font-size: 4em;
+        text-align: center;
+        color: $blue;
+    }
+    .container { // holds all project cards - projects
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-rows: auto;
+        grid-gap: 10px;
+        .card { // each project
+            position: relative;
+            width: 90%;
+            border-radius: 12px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin: auto auto;
+            background-color: $blue;
+            border: 2px solid white;
+            .icon-modal { // blue pop up display hovering over icon
+                position: absolute;
+                color: white;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: 0;
+                text-align: center;
+                margin: auto;
+                padding: 0 5px;
+                border-radius: 10px;
+                background-color: $blue;
+                transition: all .5s ease;
+                z-index: 9;
+                font-weight: bold;
+            }
+            .image-container{ // thumbnail's individual container to hold thumbnail and overlay
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+                margin-bottom: 4px;
+                box-shadow: 0 3px 5px -1px rgb(0, 0, 0);
+                width: 100%;
+                .thumbnail {
+                    position: relative;
+                    margin-bottom: -8px;
+                    width: 100%;
+                    height: 100%;
+                    transition: filter .4s ease, transform .4s ease;
+                    &:hover {
+                        transform: scale(1.3);
+                    }
+                }
+                .overlay {
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;              
+                    color: white;
+                    background-color: rgba(0, 0, 0, 0.75);
+                    transition: all .5s ease;
+                    z-index: 10;
+                    font-size: 1.5rem;
+                    &:hover {
+                        opacity: 1;
+                    }
+                    p {
+                        width: 80%;
+                        text-align: center;
+                        margin:  50px auto 0;
+                    }
+                }
+            }
+            .icon {
+                margin-left: 15px;
+                padding: 2px;
+                font-size: 1.25em;
+            }
+        }
+        @include lg-screens {
+            grid-template-columns: auto auto auto;
+        }
+    }
+}
+
+footer {
+    height: 300px;
+}

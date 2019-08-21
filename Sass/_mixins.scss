@@ -1,0 +1,21 @@
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+
+
+@mixin med-screens {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin lg-screens {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
