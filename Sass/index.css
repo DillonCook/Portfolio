@@ -356,8 +356,8 @@ template {
             transform: translateY(3px);
   }
   80% {
-    -webkit-transform: translateY(-4px);
-            transform: translateY(-4px);
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -379,8 +379,8 @@ template {
             transform: translateY(3px);
   }
   80% {
-    -webkit-transform: translateY(-4px);
-            transform: translateY(-4px);
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -490,6 +490,11 @@ header .icon-container h3 {
 header .icon-container .icon {
   font-size: 1.75em;
   padding: 0 10px;
+  color: #0874CC;
+}
+
+header .icon-container .icon:hover {
+  color: white;
 }
 
 @media (min-width: 768px) {
@@ -530,7 +535,7 @@ header .icon-modal {
 }
 
 header .icon-modal p {
-  color: rgba(59, 167, 255, 0.801);
+  color: rgba(59, 167, 255, 0.8);
   font-weight: 600;
   background-color: rgba(0, 0, 0, 0.6);
   font-size: 1.3rem;
@@ -560,7 +565,7 @@ main h2 {
   padding-top: 30px;
   font-size: 4em;
   text-align: center;
-  color: rgba(59, 167, 255, 0.801);
+  color: #0874CC;
 }
 
 main .container {
@@ -580,7 +585,7 @@ main .container .card {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   margin: auto auto;
-  background-color: rgba(59, 167, 255, 0.801);
+  background-color: rgba(59, 167, 255, 0.8);
   border: 2px solid white;
 }
 
@@ -595,7 +600,7 @@ main .container .card .icon-modal {
   margin: auto;
   padding: 0 5px;
   border-radius: 10px;
-  background-color: rgba(59, 167, 255, 0.801);
+  background-color: rgba(59, 167, 255, 0.8);
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
   z-index: 9;
@@ -698,13 +703,14 @@ nav a {
   -ms-flex-line-pack: center;
       align-content: center;
   font-size: 1.5em;
+  font-weight: 600;
   padding: 10px 15px;
   -webkit-transition: color .6s ease, font-size .4s ease;
   transition: color .6s ease, font-size .4s ease;
 }
 
 .menu li a:hover {
-  color: #3ca7ff;
+  color: #0874CC;
 }
 
 @media (min-width: 551px) {
@@ -733,16 +739,16 @@ nav a {
     list-style-type: none;
   }
   nav .menu li {
-    -webkit-animation: dancing 6s ease infinite;
-            animation: dancing 6s ease infinite;
+    -webkit-animation: dancing 8s ease infinite;
+            animation: dancing 8s ease infinite;
   }
   nav .menu li:nth-child(1) {
     -webkit-animation-delay: .32s;
             animation-delay: .32s;
   }
   nav .menu li:nth-child(2) {
-    -webkit-animation-delay: .81s;
-            animation-delay: .81s;
+    -webkit-animation-delay: 1.81s;
+            animation-delay: 1.81s;
   }
   nav .menu li:nth-child(3) {
     -webkit-animation-delay: 1.2s;
@@ -783,7 +789,7 @@ nav a {
     font-size: 1.5em;
     -webkit-transition: background-color .4s ease;
     transition: background-color .4s ease;
-    color: rgba(59, 167, 255, 0.801);
+    color: #0874CC;
     background-color: rgba(255, 255, 255, 0.5);
   }
   .toggle:hover {

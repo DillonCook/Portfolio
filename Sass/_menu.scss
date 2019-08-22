@@ -23,10 +23,11 @@ nav {
     text-decoration: none;
     align-content: center;
     font-size: 1.5em;
+    font-weight: 600;
     padding: 10px 15px;
     transition: color .6s ease, font-size .4s ease;
     &:hover {
-        color: rgb(60, 167, 255);
+        color: $dark-blue;
         
     }
 }
@@ -43,13 +44,13 @@ nav {
             align-items: center;
             list-style-type: none;
             li {
-                animation: dancing 6s ease infinite;
+                animation: dancing 8s ease infinite;
             }
             li:nth-child(1){
                 animation-delay: .32s;
             }
             li:nth-child(2){
-                animation-delay: .81s;
+                animation-delay: 1.81s;
             }
             li:nth-child(3){
                 animation-delay: 1.2s;
@@ -81,7 +82,7 @@ nav {
         height: 40px;
         font-size: 1.5em;
         transition: background-color .4s ease;
-        color: $blue;
+        color: $dark-blue;
         background-color: rgba(255, 255, 255, 0.5);
     }
     .toggle:hover {

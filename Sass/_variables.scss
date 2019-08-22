@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:200,400,600&display=swap');
-$blue: rgba(59, 167, 255, 0.801);
+$blue: rgba(59, 167, 255, 0.8);
+$dark-blue: #0874CC;
 $primary-font: 'Raleway', sans-serif;
 
 @keyframes dancing {
@@ -13,7 +14,7 @@ $primary-font: 'Raleway', sans-serif;
         transform: translateY(3px);
     }
     80% {
-        transform: translateY(-4px);
+        transform: translateY(-2px);
     }
     100% {
         transform: translateY(0);
