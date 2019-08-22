@@ -4,9 +4,11 @@
     justify-content: space-between;
 }
 
-
-
-
+@mixin sm-screens {
+    @media (min-width: 375px) {
+        @content;
+    }
+}
 
 @mixin med-screens {
     @media (min-width: 768px) {

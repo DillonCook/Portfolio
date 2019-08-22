@@ -64,6 +64,6 @@ icons.forEach((icon) => {
   // mouse leaves - info dies
   icon.addEventListener('mouseleave', () => {
     modal.style.opacity = "0";
-      // setTimeout(() => icon.parentNode.removeChild(modal), 3000); 
+      // setTimeout(() => icon.parentNode.removeChild(modal), 5000); 
   });
 });
