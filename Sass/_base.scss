@@ -24,6 +24,7 @@ header {
         padding-top: 170px;
         font-size: 3em;
         margin-bottom: 10px;
+        text-shadow: 0 2px 5px black;
         @include sm-screens {
             padding-top: 223px;
         }
@@ -38,6 +39,7 @@ header {
     h2 {
         font-size: 2em;
         margin-top: 10px;
+        text-shadow: 0 2px 5px black;
         @include med-screens {
             font-size: 3em;
         }
@@ -55,6 +57,7 @@ header {
         h3 {
             font-size: 1.5em;
             margin-top: 20px;
+            text-shadow: 0 2px 5px black;
             @include sm-screens {
                 margin-top: 100px;
             }

@@ -419,6 +419,7 @@ header h1 {
   padding-top: 170px;
   font-size: 3em;
   margin-bottom: 10px;
+  text-shadow: 0 2px 5px black;
 }
 
 @media (min-width: 375px) {
@@ -443,6 +444,7 @@ header h1 {
 header h2 {
   font-size: 2em;
   margin-top: 10px;
+  text-shadow: 0 2px 5px black;
 }
 
 @media (min-width: 768px) {
@@ -467,6 +469,7 @@ header .icon-container {
 header .icon-container h3 {
   font-size: 1.5em;
   margin-top: 20px;
+  text-shadow: 0 2px 5px black;
 }
 
 @media (min-width: 375px) {
@@ -741,6 +744,7 @@ nav a {
   nav .menu li {
     -webkit-animation: dancing 8s ease infinite;
             animation: dancing 8s ease infinite;
+    text-shadow: 0 2px 3px black;
   }
   nav .menu li:nth-child(1) {
     -webkit-animation-delay: .32s;

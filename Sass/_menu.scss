@@ -45,6 +45,7 @@ nav {
             list-style-type: none;
             li {
                 animation: dancing 8s ease infinite;
+                text-shadow: 0 2px 3px black;
             }
             li:nth-child(1){
                 animation-delay: .32s;
