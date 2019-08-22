@@ -395,7 +395,6 @@ html {
 .icon {
   -webkit-transition: color .3s ease;
   transition: color .3s ease;
-  color: rgba(0, 0, 0, 0.85);
 }
 
 .icon:hover {
@@ -493,7 +492,8 @@ header .icon-container h3 {
 header .icon-container .icon {
   font-size: 1.75em;
   padding: 0 10px;
-  color: #0874CC;
+  color: rgba(59, 167, 255, 0.8);
+  text-shadow: 0 2px 2px black;
 }
 
 header .icon-container .icon:hover {
@@ -665,6 +665,8 @@ main .container .card .image-container .overlay p {
 
 main .container .card .icon {
   margin-left: 15px;
+  color: black;
+  text-shadow: 0 1px 2px white;
   font-size: 2em;
 }
 

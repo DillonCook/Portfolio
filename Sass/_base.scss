@@ -3,7 +3,6 @@ html {
 }
 .icon {
     transition: color .3s ease;
-    color: rgba(0, 0, 0, 0.85);
 }
 .icon:hover {
     color: rgb(255, 255, 255);
@@ -71,7 +70,8 @@ header {
         .icon {
             font-size: 1.75em;
             padding: 0 10px;
-            color: $dark-blue;
+            color: $blue;
+            text-shadow: 0 2px 2px black;
             &:hover {
                 color: white;
             }
@@ -201,7 +201,8 @@ main {
             }
             .icon {
                 margin-left: 15px;
-                
+                color: rgba(0, 0, 0, 1);
+                text-shadow: 0 1px 2px white;
                 font-size: 2em;
             }
         }
