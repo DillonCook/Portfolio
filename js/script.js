@@ -86,3 +86,63 @@ $('#nav-home').click(() => {
       scrollTop: $('#home').offset().top
   }, 400);
 });
+
+// ================ Typewriter Effect ====================
+
+const typeWriter = function (txtElement, words, wait = 2500) {
+  this.txtElement = txtElement;
+  this.words = words;
+  this.txt = '';
+  this.wordIndex = 0;
+  this.wait = parseInt(wait, 10);
+  this.type();
+  this.isDeleting = false;
+}
+
+// -------------------- Type function ------- borrowed and modified from Traversy Media
+  typeWriter.prototype.type = function() {
+    // Create index of word
+    const current = this.wordIndex % this.words.length;
+    // Get full text of word
+    const fullTxt = this.words[current];
+    // check if deleting
+    if (this.isDeleting) {
+      // Remove characters
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      // Add char
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+    // Variable type speed
+    let typeSpeed = 200;
+    if (this.isDeleting) {
+      typeSpeed /= 3;
+    }
+    // If word is complete
+    if (!this.isDeleting && this.txt === fullTxt) {
+      typeSpeed = this.wait;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      // move to next word
+      this.wordIndex ++;
+      // pause type speed
+      typeSpeed = 300;
+    }
+    setTimeout(() =>  this.type(), typeSpeed)
+  }
+
+// Dom Load Init
+document.addEventListener('DOMContentLoaded', init);
+
+// init
+function init(){
+  const txtElement = document.querySelector('.txt-type');
+  const words = JSON.parse(txtElement.getAttribute('data-words'));
+  const wait = txtElement.getAttribute('data-wait');
+
+  new typeWriter(txtElement, words, wait);
+}
+
