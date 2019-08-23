@@ -351,7 +351,7 @@ template {
     -webkit-transform: translateY(-3px);
             transform: translateY(-3px);
   }
-  55% {
+  50% {
     -webkit-transform: translateY(3px);
             transform: translateY(3px);
   }
@@ -374,7 +374,7 @@ template {
     -webkit-transform: translateY(-3px);
             transform: translateY(-3px);
   }
-  55% {
+  50% {
     -webkit-transform: translateY(3px);
             transform: translateY(3px);
   }
@@ -486,6 +486,7 @@ header .icon-container h3 {
 @media (min-width: 1024px) {
   header .icon-container h3 {
     font-size: 3em;
+    margin-bottom: 25px;
   }
 }
 
@@ -561,6 +562,7 @@ header .icon-modal p {
 
 main {
   background-color: lightgray;
+  padding-bottom: 50px;
 }
 
 main h2 {
@@ -665,9 +667,13 @@ main .container .card .image-container .overlay p {
 
 main .container .card .icon {
   margin-left: 15px;
-  color: black;
+  color: rgba(0, 0, 0, 0.75);
   text-shadow: 0 1px 2px white;
   font-size: 2em;
+}
+
+main .container .card .icon:hover {
+  color: black;
 }
 
 @media (min-width: 1024px) {
@@ -678,7 +684,41 @@ main .container .card .icon {
 }
 
 footer {
-  height: 300px;
+  background-color: #043a66;
+  text-align: center;
+}
+
+footer h1 {
+  margin: 0 auto 25px;
+  padding-top: 40px;
+  font-size: 3em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px black;
+}
+
+footer h3, footer h4 {
+  color: white;
+  text-shadow: 0 1px 2px black;
+}
+
+footer svg {
+  width: 50px;
+  margin: 10px 20px 40px;
+  border-radius: 50%;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+footer .github {
+  cursor: pointer;
+}
+
+footer .github path {
+  fill: white;
+}
+
+footer .linkedin {
+  cursor: pointer;
 }
 
 nav {
@@ -744,21 +784,21 @@ nav a {
     list-style-type: none;
   }
   nav .menu li {
-    -webkit-animation: dancing 8s ease infinite;
-            animation: dancing 8s ease infinite;
+    -webkit-animation: dancing 6s ease infinite;
+            animation: dancing 6s ease infinite;
     text-shadow: 0 2px 3px black;
   }
   nav .menu li:nth-child(1) {
-    -webkit-animation-delay: .32s;
-            animation-delay: .32s;
+    -webkit-animation-delay: .5s;
+            animation-delay: .5s;
   }
   nav .menu li:nth-child(2) {
-    -webkit-animation-delay: 1.81s;
-            animation-delay: 1.81s;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
   }
   nav .menu li:nth-child(3) {
-    -webkit-animation-delay: 1.2s;
-            animation-delay: 1.2s;
+    -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
   }
   nav .menu li:hover {
     -webkit-animation: none;
