@@ -67,3 +67,22 @@ icons.forEach((icon) => {
       // setTimeout(() => icon.parentNode.removeChild(modal), 5000); 
   });
 });
+
+// jQuery smooth scroll down on click
+$('#nav-projects').click(() => {
+  $('html, body').animate({
+      scrollTop: $('#projects').offset().top
+  }, 500);
+});
+
+$('#nav-contact').click(() => {
+  $('html, body').animate({
+      scrollTop: $('#contact').offset().top
+  }, 500);
+});
+
+$('#nav-home').click(() => {
+  $('html, body').animate({
+      scrollTop: $('#home').offset().top
+  }, 400);
+});
