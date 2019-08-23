@@ -483,7 +483,13 @@ header .txt-type .txt {
 }
 
 main {
+  -webkit-box-shadow: 0 150px 200px 1px white inset;
+          box-shadow: 0 150px 200px 1px white inset;
+  background-image: url(../images/abstract-adventure-background-2397652.jpg);
+  background-size: cover;
   background-color: lightgray;
+  background-repeat: no-repeat;
+  background-position-y: 100%;
   padding-bottom: 50px;
 }
 
@@ -493,6 +499,9 @@ main h2 {
   font-size: 4em;
   text-align: center;
   color: #0874CC;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.5);
+  -webkit-animation: dancing 9s infinite;
+          animation: dancing 9s infinite;
 }
 
 main .container {
@@ -543,6 +552,7 @@ main .container .card .image-container {
   -webkit-box-shadow: 0 3px 5px -1px black;
           box-shadow: 0 3px 5px -1px black;
   width: 100%;
+  border-bottom: 2px solid white;
 }
 
 main .container .card .image-container .thumbnail {
