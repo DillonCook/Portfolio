@@ -427,9 +427,21 @@ header h1 {
   }
 }
 
+@media (min-width: 375px) and (orientation: landscape) {
+  header h1 {
+    padding-top: 115px;
+  }
+}
+
 @media (min-width: 768px) {
   header h1 {
     font-size: 4em;
+  }
+}
+
+@media (min-width: 768px) and (min-width: 825px) {
+  header h1 {
+    padding-top: 225px;
   }
 }
 
@@ -437,6 +449,12 @@ header h1 {
   header h1 {
     font-size: 5em;
     padding-top: 250px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  header h1 {
+    padding-top: 205px !important;
   }
 }
 
@@ -456,107 +474,6 @@ header h2 {
   header h2 {
     font-size: 3.5em;
     margin-top: 20px;
-  }
-}
-
-header .icon-container {
-  position: absolute;
-  width: 100%;
-  bottom: 10%;
-}
-
-header .icon-container h3 {
-  font-size: 1.5em;
-  margin-top: 20px;
-  text-shadow: 0 2px 5px black;
-}
-
-@media (min-width: 375px) {
-  header .icon-container h3 {
-    margin-top: 100px;
-  }
-}
-
-@media (min-width: 768px) {
-  header .icon-container h3 {
-    font-size: 2em;
-  }
-}
-
-@media (min-width: 1024px) {
-  header .icon-container h3 {
-    font-size: 3em;
-    margin-bottom: 25px;
-  }
-}
-
-header .icon-container .icon {
-  font-size: 1.75em;
-  padding: 0 10px;
-  color: rgba(59, 167, 255, 0.8);
-  text-shadow: 0 2px 2px black;
-}
-
-header .icon-container .icon:hover {
-  color: white;
-}
-
-@media (min-width: 768px) {
-  header .icon-container .icon {
-    font-size: 2.5em;
-  }
-}
-
-@media (min-width: 1024px) {
-  header .icon-container .icon {
-    padding: 25px;
-    font-size: 3.5em;
-  }
-}
-
-header .icon-modal {
-  position: absolute;
-  opacity: 0;
-  -webkit-transition: opacity .5s ease;
-  transition: opacity .5s ease;
-  right: 50%;
-  width: 200px;
-  margin-right: -100px;
-  margin-top: 10px;
-}
-
-@media (min-width: 768px) {
-  header .icon-modal {
-    margin-top: 25px;
-  }
-}
-
-@media (min-width: 1024px) {
-  header .icon-modal {
-    width: 300px;
-    margin-right: -150px;
-  }
-}
-
-header .icon-modal p {
-  color: rgba(59, 167, 255, 0.8);
-  font-weight: 600;
-  background-color: rgba(0, 0, 0, 0.6);
-  font-size: 1.3rem;
-  border-radius: 10px;
-  padding: 5px;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  header .icon-modal p {
-    font-size: 1.5em;
-  }
-}
-
-@media (min-width: 1024px) {
-  header .icon-modal p {
-    font-size: 2em;
   }
 }
 
@@ -668,7 +585,7 @@ main .container .card .image-container .overlay p {
 main .container .card .icon {
   margin-left: 15px;
   color: rgba(0, 0, 0, 0.75);
-  text-shadow: 0 1px 2px white;
+  text-shadow: 0 0 3px white;
   font-size: 2em;
 }
 
@@ -680,6 +597,109 @@ main .container .card .icon:hover {
   main .container {
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
+  }
+}
+
+main .icon-container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+main .icon-container h3 {
+  font-size: 1.5em;
+  margin-top: 20px;
+  text-shadow: 0 2px 3px black;
+  color: white;
+}
+
+@media (min-width: 375px) {
+  main .icon-container h3 {
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 768px) {
+  main .icon-container h3 {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1024px) {
+  main .icon-container h3 {
+    font-size: 3em;
+    margin-bottom: 25px;
+  }
+}
+
+main .icon-container .icon {
+  font-size: 1.75em;
+  padding: 0 10px;
+  color: rgba(59, 167, 255, 0.8);
+  text-shadow: 0 1px 2px black;
+}
+
+main .icon-container .icon:hover {
+  color: white;
+}
+
+@media (min-width: 768px) {
+  main .icon-container .icon {
+    font-size: 2.5em;
+  }
+}
+
+@media (min-width: 1024px) {
+  main .icon-container .icon {
+    padding: 25px;
+    font-size: 3.5em;
+  }
+}
+
+main .icon-container .icon-modal {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+  right: 50%;
+  width: 200px;
+  margin-right: -100px;
+  margin-top: 10px;
+}
+
+main .icon-container .icon-modal p {
+  color: rgba(59, 167, 255, 0.8);
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 1.3rem;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  main .icon-container .icon-modal p {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 1024px) {
+  main .icon-container .icon-modal p {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 768px) {
+  main .icon-container .icon-modal {
+    margin-top: 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  main .icon-container .icon-modal {
+    width: 300px;
+    margin-right: -150px;
   }
 }
 

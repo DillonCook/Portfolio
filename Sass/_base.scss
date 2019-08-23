@@ -24,16 +24,27 @@ header {
         font-size: 3em;
         margin-bottom: 10px;
         text-shadow: 0 2px 5px black;
+        
         @include sm-screens {
             padding-top: 223px;
+            @include landscape {
+                padding-top: 115px;
+            }
         }
         @include med-screens {
             font-size: 4em;
+            @include iphoneX {
+                padding-top: 225px;
+            }
         }
         @include lg-screens {
             font-size: 5em;
             padding-top: 250px;
+            @include landscape {
+                padding-top: 205px !important;
+            }
         }
+
     }
     h2 {
         font-size: 2em;
@@ -45,77 +56,6 @@ header {
         @include lg-screens {
             font-size: 3.5em;
             margin-top: 20px;
-        }
-    }
-    
-    .icon-container {
-        position: absolute;
-        width: 100%;
-        bottom: 10%;
-
-        h3 {
-            font-size: 1.5em;
-            margin-top: 20px;
-            text-shadow: 0 2px 5px black;
-            @include sm-screens {
-                margin-top: 100px;
-            }
-            @include med-screens {
-                font-size: 2em;
-            }
-            @include lg-screens {
-                font-size: 3em;
-                margin-bottom: 25px;
-            }
-        }
-        .icon {
-            font-size: 1.75em;
-            padding: 0 10px;
-            color: $blue;
-            text-shadow: 0 2px 2px black;
-            &:hover {
-                color: white;
-            }
-            @include med-screens {
-                font-size: 2.5em;
-            }
-            @include lg-screens {
-                padding: 25px;
-                font-size: 3.5em;
-            }
-        }
-    }
-    
-    .icon-modal {
-        position: absolute;
-        opacity: 0;
-        transition: opacity .5s ease;
-        right: 50%;
-        width: 200px;
-        margin-right: -100px;
-        margin-top: 10px;
-        
-        @include med-screens {
-            margin-top: 25px;
-        }
-        @include lg-screens {
-            width: 300px;
-            margin-right: -150px;
-        }
-        p {
-            color: $blue;
-            font-weight: 600;
-            background-color: rgba(0, 0, 0, 0.6);
-            font-size: 1.3rem;
-            border-radius: 10px;
-            padding: 5px;
-            margin: 0 auto;
-            @include med-screens {
-                font-size: 1.5em;
-            }
-            @include lg-screens {
-                font-size: 2em;
-            }
         }
     }
 }
@@ -204,7 +144,7 @@ main {
             .icon {
                 margin-left: 15px;
                 color: rgba(0, 0, 0, .75);
-                text-shadow: 0 1px 2px white;
+                text-shadow: 0 0 3px white;
                 font-size: 2em;
                 &:hover {
                     color: black;
@@ -215,6 +155,77 @@ main {
             grid-template-columns: auto auto auto;
         }
     }
+    .icon-container {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+        h3 {
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-shadow: 0 2px 3px black;
+            color: white;
+            @include sm-screens {
+                margin-top: 100px;
+            }
+            @include med-screens {
+                font-size: 2em;
+            }
+            @include lg-screens {
+                font-size: 3em;
+                margin-bottom: 25px;
+            }
+        }
+        .icon {
+            font-size: 1.75em;
+            padding: 0 10px;
+            color: $blue;
+            text-shadow: 0 1px 2px black;
+            &:hover {
+                color: white;
+            }
+            @include med-screens {
+                font-size: 2.5em;
+            }
+            @include lg-screens {
+                padding: 25px;
+                font-size: 3.5em;
+            }
+        }
+        .icon-modal {
+            position: absolute;
+            opacity: 0;
+            transition: opacity .5s ease;
+            right: 50%;
+            width: 200px;
+            margin-right: -100px;
+            margin-top: 10px;
+            p {
+                color: $blue;
+                font-weight: 600;
+                background-color: rgba(0, 0, 0, 0.6);
+                font-size: 1.3rem;
+                border-radius: 10px;
+                padding: 5px;
+                margin: 0 auto;
+                @include med-screens {
+                    font-size: 1.5em;
+                }
+                @include lg-screens {
+                    font-size: 2em;
+                }
+            }
+            @include med-screens {
+                margin-top: 25px;
+            }
+            @include lg-screens {
+                width: 300px;
+                margin-right: -150px;
+            }
+        }
+    }
+    
+    
 }
 
 footer {
