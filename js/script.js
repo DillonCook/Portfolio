@@ -145,4 +145,26 @@ function init(){
 
   new typeWriter(txtElement, words, wait);
 }
+// View More
+const views = document.querySelectorAll('.view-more');
+const over = document.querySelector('.overlay')
+const thumb = document.querySelector('.thumbnail')
+
+views.forEach((view) => {
+  view.addEventListener('click', () => {
+    if (view.textContent == "View More") {
+      view.parentNode.parentNode.firstElementChild.firstElementChild.style.transform = "scale(1.3)";
+      view.parentNode.parentNode.firstElementChild.lastElementChild.lastElementChild.style.opacity = "1";
+      view.textContent = 'Hide';
+  
+    } else {
+      view.parentNode.parentNode.firstElementChild.firstElementChild.style.transform = "scale(1)";
+      view.parentNode.parentNode.firstElementChild.lastElementChild.lastElementChild.style.opacity = "0";
+        view.textContent = "View More";
+    }
+  });
+
+
+})
+
 
