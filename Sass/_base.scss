@@ -95,6 +95,18 @@ main {
             margin: auto auto;
             background-color: $blue;
             border: 2px solid white;
+            .icon-div {
+                display: flex;
+                justify-content: space-around;
+                span {
+                    margin: auto 0;
+                    color: white;
+                    font-weight: 600;
+                    border-bottom: 1px solid white;
+                    border-radius: 5px;
+                    padding-bottom: 2px;
+                }
+            }
             .icon-modal { // blue pop up display hovering over icon
                 position: absolute;
                 color: white;

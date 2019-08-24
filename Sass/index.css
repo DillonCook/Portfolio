@@ -525,6 +525,23 @@ main .container .card {
   border: 2px solid white;
 }
 
+main .container .card .icon-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .container .card .icon-div span {
+  margin: auto 0;
+  color: white;
+  font-weight: 600;
+  border-bottom: 1px solid white;
+  border-radius: 5px;
+  padding-bottom: 2px;
+}
+
 main .container .card .icon-modal {
   position: absolute;
   color: white;
