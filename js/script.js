@@ -145,7 +145,7 @@ function init(){
 
   new typeWriter(txtElement, words, wait);
 }
-// View More
+// View More Button on project cards
 const views = document.querySelectorAll('.view-more');
 const over = document.querySelector('.overlay')
 const thumb = document.querySelector('.thumbnail')
@@ -163,8 +163,19 @@ views.forEach((view) => {
         view.textContent = "View More";
     }
   });
-
-
 })
 
+// Menu toggle
+const toggle = document.querySelector('.toggle');
+const menu = document.querySelector('.nav');
+
+toggle.addEventListener('click', () => {
+  if (menu.classList[1] == "menu-show") {
+    menu.classList.remove('menu-show');
+    menu.classList.add('menu-hide');
+  } else {
+    menu.classList.remove('menu-hide');
+    menu.classList.add('menu-show');
+  }
+})
 

@@ -17,17 +17,15 @@ nav {
         background-color: rgba(0, 0, 0, 0.6);
     }
 }
-#nav-checkbox,
-    .toggle {
-        display: none;
-    }
-.menu li a {
+
+.nav a {
     text-decoration: none;
     align-content: center;
     font-size: 1.5em;
     font-weight: 600;
     padding: 10px 15px;
     transition: color .6s ease, font-size .4s ease;
+    cursor: pointer;
     &:hover {
         color: $dark-blue;
         
@@ -37,28 +35,38 @@ nav {
     nav {
         margin-top: 5px;
         width: 100%;
-        .menu {
+        .toggle {
+            display: none;
+        }
+        .nav {
             @include flex-row;
+            justify-content: space-around;
             width: 95%;
             padding: 0;
             margin: 0 auto;
             height: 50px;
             align-items: center;
             list-style-type: none;
-            li {
+            #nav-home {
+                margin-right: auto;
+            }
+            a {
                 animation: dancing 6s ease infinite;
                 text-shadow: 0 2px 3px black;
             }
-            li:nth-child(1){
+            a:nth-child(1){
                 animation-delay: .5s;
             }
-            li:nth-child(2){
+            a:nth-child(2){
                 animation-delay: 1s;
             }
-            li:nth-child(3){
+            a:nth-child(3){
                 animation-delay: 1.5s;
             }
-            li:hover {
+            a:nth-child(4){
+                animation-delay: 2s;
+            }
+            a:hover {
                 animation: none;
             }
             .container {
@@ -72,79 +80,139 @@ nav {
 @media (max-width: 550px) {
     nav {
         width: 100%;
-    }
-    .toggle {
-        margin-top: 0;
-        clear: both;
-        display: block;
-        text-align: center;
-        line-height: 40px;
-        cursor: pointer;
-        width: 100%;
-        padding: 10px 0;
-        height: 40px;
-        font-size: 1.5em;
-        transition: background-color .4s ease;
-        color: $dark-blue;
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-    .toggle:hover {
-        background: rgba(0, 0, 0, 0.95);
-    }
-    #nav-checkbox:checked + label .nav li {
-        opacity: 1;
-        visibility: visible;
-        transition: all 1s ease-in;
-    }
-
-    #bars {
-        transition: transform .55s ease;
-        width: 30px;
-        margin: 0 auto;
-    }
-
-    #nav-checkbox:checked + label #bars {
-        transform: rotate(90deg);
-    }
-
-    #nav-checkbox + label .nav li {
-        opacity: 0;
-        transition: visibility .5s ease, opacity .3s ease;
-        visibility: none;
-        
-    }
-
-    #nav-checkbox:checked + label .nav {
-        height: 230px;
-    }
-
-    .menu {
-        padding: 0;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 0;
-        background-color: rgba(0, 0, 0, 0.7);
-        transition: height .4s ease-out;
-        .container {
-            margin: -45px auto 0;
+        .menu-show {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.75);
+            visibility: hidden;
+            height: 0;
+            opacity: 0;
+            li {
+                list-style-type: none;
+                padding: 2px 0;
+                cursor: pointer;
+                a {
+                    text-decoration: none;
+                    font-size: 1.5em;
+                }
+            }
+        }
+        .menu-hide {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.75);
+            visibility: visible;
+            height: auto;
+            opacity: 1;
+            transition: all .5s ease;
+            li {
+                margin: 7px 0;
+                list-style-type: none;
+                padding: 2px 0;
+                cursor: pointer;
+                a {
+                    text-decoration: none;
+                    font-size: 1.5em;
+                }
+            }
+        }
+        .toggle {
+            margin-top: 0;
+            clear: both;
+            display: block;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            width: 100%;
+            padding: 10px 0;
+            height: 40px;
+            font-size: 1.5em;
+            transition: background-color .4s ease;
+            color: $dark-blue;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .toggle:hover {
+            background: rgba(0, 0, 0, 0.95);
         }
     }
-    .menu li {
-        margin: 0 auto;
-        display: flex;
-        align-self: center;
-        width: 95%;
-        opacity: 0;
-        visibility: hidden;
-    }
-    .menu li a {
-        margin: 0 auto;
-        width: 95%;
-        text-align: center;
-        align-self: center;
-        align-content: center;
-    }
+    
+//     nav {
+//         width: 100%;
+//     }
+//     .toggle {
+//         margin-top: 0;
+//         clear: both;
+//         display: block;
+//         text-align: center;
+//         line-height: 40px;
+//         cursor: pointer;
+//         width: 100%;
+//         padding: 10px 0;
+//         height: 40px;
+//         font-size: 1.5em;
+//         transition: background-color .4s ease;
+//         color: $dark-blue;
+//         background-color: rgba(0, 0, 0, 0.5);
+//     }
+//     .toggle:hover {
+//         background: rgba(0, 0, 0, 0.95);
+//     }
+//     #nav-checkbox:checked + label .nav li {
+//         opacity: 1;
+//         visibility: visible;
+//         transition: all 1s ease-in;
+//     }
+
+//     #bars {
+//         transition: transform .55s ease;
+//         width: 30px;
+//         margin: 0 auto;
+//     }
+
+//     #nav-checkbox:checked + label #bars {
+//         transform: rotate(90deg);
+//     }
+
+//     #nav-checkbox + label .nav li {
+//         opacity: 0;
+//         transition: visibility .5s ease, opacity .3s ease;
+//     }
+
+//     #nav-checkbox:checked + label .nav {
+//         height: 230px;
+//     }
+
+//     .menu {
+//         padding: 0;
+//         margin: 0 auto;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-around;
+//         align-items: center;
+//         height: 0;
+//         background-color: rgba(0, 0, 0, 0.7);
+//         transition: height .4s ease-out;
+//         .container {
+//             margin: -45px auto 0;
+//         }
+//     }
+//     .menu li {
+//         margin: 0 auto;
+//         display: flex;
+//         align-self: center;
+//         width: 95%;
+//         opacity: 0;
+//         visibility: hidden;
+//     }
+//     .menu li a {
+//         margin: 0 auto;
+//         width: 95%;
+//         text-align: center;
+//         align-self: center;
+//         align-content: center;
+//     }
 }
