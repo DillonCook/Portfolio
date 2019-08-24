@@ -158,9 +158,9 @@ main {
                     height: 100%;
                     transition: filter .4s ease, transform .4s ease;
                     
-                    &:hover{
-                        transform: scale(1.3);
-                    }
+                    // &:hover{
+                    //     transform: scale(1.3);
+                    // }
                 }
                 .overlay { // sits on top of image allows for hovering and clicking
                     opacity: 0;
@@ -174,9 +174,9 @@ main {
                     transition: all .5s ease;
                     z-index: 10;
                     font-size: 1.5rem;
-                    &:hover {
-                        opacity: 1 !important;
-                    }
+                    // &:hover {
+                    //     opacity: 1 !important;
+                    // }
                     p {
                         width: 95%;
                         height: 100%;

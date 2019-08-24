@@ -14,6 +14,20 @@ window.onscroll = function() {
     }
   }
 
+  // Menu toggle
+const toggle = document.querySelector('.toggle');
+const menu = document.querySelector('.nav');
+
+toggle.addEventListener('click', () => {
+  if (menu.classList[1] == "menu-show") {
+    menu.classList.remove('menu-show');
+    menu.classList.add('menu-hide');
+  } else if (menu.classList[1] == "menu-hide") {
+    menu.classList.remove('menu-hide');
+    menu.classList.add('menu-show');
+  }
+})
+
 // Activate zoom-in effect on hover
 const imageContainers = document.querySelectorAll('.image-container');
 const thumbnails = document.querySelectorAll('.thumbnail');
@@ -22,11 +36,20 @@ const overlays = document.querySelectorAll('.overlay');
 imageContainers.forEach((image) => {
   image.addEventListener('mouseenter', () => {
     image.firstElementChild.style.transform = "scale(1.3)";
+    image.lastElementChild.lastElementChild.style.opacity = "1";
+    if (image.parentNode.lastElementChild.lastElementChild.textContent == "View More") {
+      image.parentNode.lastElementChild.lastElementChild.textContent = "Hide";      
+    }
   });
   image.addEventListener('mouseleave', () => {
     image.firstElementChild.style.transform = "scale(1)";
+    image.lastElementChild.lastElementChild.style.opacity = "0";
+    if (image.parentNode.lastElementChild.lastElementChild.textContent == "Hide") {
+      image.parentNode.lastElementChild.lastElementChild.textContent = "View More";      
+    }
   });
 });
+
 
 // Icons
 const icons = document.querySelectorAll('.icon');
@@ -145,6 +168,8 @@ function init(){
 
   new typeWriter(txtElement, words, wait);
 }
+
+
 // View More Button on project cards
 const views = document.querySelectorAll('.view-more');
 const over = document.querySelector('.overlay')
@@ -160,22 +185,10 @@ views.forEach((view) => {
     } else {
       view.parentNode.parentNode.firstElementChild.firstElementChild.style.transform = "scale(1)";
       view.parentNode.parentNode.firstElementChild.lastElementChild.lastElementChild.style.opacity = "0";
-        view.textContent = "View More";
+      view.textContent = "View More";
     }
   });
 })
 
-// Menu toggle
-const toggle = document.querySelector('.toggle');
-const menu = document.querySelector('.nav');
 
-toggle.addEventListener('click', () => {
-  if (menu.classList[1] == "menu-show") {
-    menu.classList.remove('menu-show');
-    menu.classList.add('menu-hide');
-  } else {
-    menu.classList.remove('menu-hide');
-    menu.classList.add('menu-show');
-  }
-})
 
