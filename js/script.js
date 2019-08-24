@@ -99,7 +99,7 @@ const typeWriter = function (txtElement, words, wait = 2500) {
   this.isDeleting = false;
 }
 
-// -------------------- Type function ------- borrowed and modified from Traversy Media
+// -------------------- Type function ------- learned and modified from Traversy Media
   typeWriter.prototype.type = function() {
     // Create index of word
     const current = this.wordIndex % this.words.length;
