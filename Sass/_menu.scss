@@ -14,7 +14,7 @@ nav {
     top: 0;
     margin-top: 0;
     @media (min-width: 551px) {
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.65);
     }
 }
 
@@ -99,6 +99,10 @@ nav {
                     font-size: 1.5em;
                 }
             }
+            & + .toggle > #bars {
+                transition: transform .5s ease;
+                transform: rotate(0deg);
+            }
         }
         .menu-hide {
             display: flex;
@@ -120,6 +124,10 @@ nav {
                     font-size: 1.5em;
                 }
             }
+            & + .toggle > #bars {
+                transition: transform .5s ease;
+                transform: rotate(90deg);
+            }
         }
         .toggle {
             margin-top: 0;
@@ -134,86 +142,11 @@ nav {
             font-size: 1.5em;
             transition: background-color .4s ease;
             color: $dark-blue;
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-        .toggle:hover {
-            background: rgba(0, 0, 0, 0.95);
+            background-color: rgba(0, 0, 0, 0.9);
+            #bars {
+                width: 30px;
+                margin: 0 auto;
+            }   
         }
     }
-    
-//     nav {
-//         width: 100%;
-//     }
-//     .toggle {
-//         margin-top: 0;
-//         clear: both;
-//         display: block;
-//         text-align: center;
-//         line-height: 40px;
-//         cursor: pointer;
-//         width: 100%;
-//         padding: 10px 0;
-//         height: 40px;
-//         font-size: 1.5em;
-//         transition: background-color .4s ease;
-//         color: $dark-blue;
-//         background-color: rgba(0, 0, 0, 0.5);
-//     }
-//     .toggle:hover {
-//         background: rgba(0, 0, 0, 0.95);
-//     }
-//     #nav-checkbox:checked + label .nav li {
-//         opacity: 1;
-//         visibility: visible;
-//         transition: all 1s ease-in;
-//     }
-
-//     #bars {
-//         transition: transform .55s ease;
-//         width: 30px;
-//         margin: 0 auto;
-//     }
-
-//     #nav-checkbox:checked + label #bars {
-//         transform: rotate(90deg);
-//     }
-
-//     #nav-checkbox + label .nav li {
-//         opacity: 0;
-//         transition: visibility .5s ease, opacity .3s ease;
-//     }
-
-//     #nav-checkbox:checked + label .nav {
-//         height: 230px;
-//     }
-
-//     .menu {
-//         padding: 0;
-//         margin: 0 auto;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-around;
-//         align-items: center;
-//         height: 0;
-//         background-color: rgba(0, 0, 0, 0.7);
-//         transition: height .4s ease-out;
-//         .container {
-//             margin: -45px auto 0;
-//         }
-//     }
-//     .menu li {
-//         margin: 0 auto;
-//         display: flex;
-//         align-self: center;
-//         width: 95%;
-//         opacity: 0;
-//         visibility: hidden;
-//     }
-//     .menu li a {
-//         margin: 0 auto;
-//         width: 95%;
-//         text-align: center;
-//         align-self: center;
-//         align-content: center;
-//     }
 }

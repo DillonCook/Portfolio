@@ -812,7 +812,7 @@ nav a {
 
 @media (min-width: 551px) {
   .sticky {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.65);
   }
 }
 
@@ -934,6 +934,14 @@ nav a {
     text-decoration: none;
     font-size: 1.5em;
   }
+  nav .menu-show + .toggle > #bars {
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    transition: transform .5s ease, -webkit-transform .5s ease;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
   nav .menu-hide {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -961,6 +969,14 @@ nav a {
     text-decoration: none;
     font-size: 1.5em;
   }
+  nav .menu-hide + .toggle > #bars {
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    transition: transform .5s ease, -webkit-transform .5s ease;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
   nav .toggle {
     margin-top: 0;
     clear: both;
@@ -975,10 +991,11 @@ nav a {
     -webkit-transition: background-color .4s ease;
     transition: background-color .4s ease;
     color: #0874CC;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.9);
   }
-  nav .toggle:hover {
-    background: rgba(0, 0, 0, 0.95);
+  nav .toggle #bars {
+    width: 30px;
+    margin: 0 auto;
   }
 }
 /*# sourceMappingURL=index.css.map */
