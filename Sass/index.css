@@ -922,6 +922,8 @@ nav a {
     visibility: hidden;
     height: 0;
     opacity: 0;
+    -webkit-transition: height .5s ease, opacity .3s ease, visibility .5s ease;
+    transition: height .5s ease, opacity .3s ease, visibility .5s ease;
   }
   nav .menu-show li {
     list-style-type: none;
@@ -944,7 +946,7 @@ nav a {
     margin: 0;
     background-color: rgba(0, 0, 0, 0.75);
     visibility: visible;
-    height: auto;
+    height: 200px;
     opacity: 1;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
@@ -973,7 +975,7 @@ nav a {
     -webkit-transition: background-color .4s ease;
     transition: background-color .4s ease;
     color: #0874CC;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
   }
   nav .toggle:hover {
     background: rgba(0, 0, 0, 0.95);

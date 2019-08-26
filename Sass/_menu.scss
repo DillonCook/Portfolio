@@ -89,6 +89,7 @@ nav {
             visibility: hidden;
             height: 0;
             opacity: 0;
+            transition: height .5s ease, opacity .3s ease, visibility .5s ease;
             li {
                 list-style-type: none;
                 padding: 2px 0;
@@ -106,7 +107,7 @@ nav {
             margin: 0;
             background-color: rgba(0, 0, 0, 0.75);
             visibility: visible;
-            height: auto;
+            height: 200px;
             opacity: 1;
             transition: all .5s ease;
             li {
@@ -133,7 +134,7 @@ nav {
             font-size: 1.5em;
             transition: background-color .4s ease;
             color: $dark-blue;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
         }
         .toggle:hover {
             background: rgba(0, 0, 0, 0.95);
