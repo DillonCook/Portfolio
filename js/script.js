@@ -1,34 +1,5 @@
-// Sticky top nav on scroll
-window.onscroll = function() {
-    stickyNav()
-  };
-  
-  var navbar = document.querySelector("nav");
-  var sticky = navbar.offsetTop;
-  
-  function stickyNav() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky");
-    } else {
-      navbar.classList.remove("sticky");
-    }
-  }
 
-  // Menu toggle
-const toggle = document.querySelector('.toggle');
-const menu = document.querySelector('.nav');
-
-toggle.addEventListener('click', () => {
-  if (menu.classList[1] == "menu-show") {
-    menu.classList.remove('menu-show');
-    menu.classList.add('menu-hide');
-  } else if (menu.classList[1] == "menu-hide") {
-    menu.classList.remove('menu-hide');
-    menu.classList.add('menu-show');
-  }
-})
-
-// Activate zoom-in effect on hover
+// ============================= Activate zoom-in effect on projects on hover =============================
 const imageContainers = document.querySelectorAll('.image-container');
 const thumbnails = document.querySelectorAll('.thumbnail');
 const overlays = document.querySelectorAll('.overlay');
@@ -68,8 +39,6 @@ icons.forEach((icon) => {
         // set to 0 so opacity instantly triggers upon creaton of modal
       }, 0);
       
-      
-
     if (icon.classList[0] == "devicon-html5-plain") {
       modalText.textContent = "HTML5";
     } else if (icon.classList[0] == "devicon-css3-plain") {
@@ -110,7 +79,7 @@ $('#nav-home').click(() => {
   }, 400);
 });
 
-// ================ Typewriter Effect ====================
+// ================ Typewriter Effect ============================================================================
 
 const typeWriter = function (txtElement, words, wait = 2500) {
   this.txtElement = txtElement;
@@ -122,7 +91,7 @@ const typeWriter = function (txtElement, words, wait = 2500) {
   this.isDeleting = false;
 }
 
-// -------------------- Type function ------- learned and modified from Traversy Media
+//================= Type function =============== learned and modified from Traversy Media
   typeWriter.prototype.type = function() {
     // Create index of word
     const current = this.wordIndex % this.words.length;
@@ -168,9 +137,11 @@ function init(){
 
   new typeWriter(txtElement, words, wait);
 }
+//================================== TypeWriter Finish ======================================
 
 
-// View More Button on project cards
+
+// ==================  "View More" Button on project cards ===========================
 const views = document.querySelectorAll('.view-more');
 const over = document.querySelector('.overlay')
 const thumb = document.querySelector('.thumbnail')
