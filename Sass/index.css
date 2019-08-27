@@ -747,9 +747,10 @@ main .icon-container .icon-modal {
 }
 
 main .icon-container .icon-modal p {
-  color: rgba(59, 167, 255, 0.8);
+  color: #0874CC;
+  text-shadow: 0 1px 2px black;
   font-weight: 600;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
   font-size: 1.3rem;
   border-radius: 10px;
   padding: 5px;
