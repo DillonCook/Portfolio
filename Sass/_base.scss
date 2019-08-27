@@ -11,13 +11,19 @@ html {
 #home {
     position: relative;
     text-align: center;
-    background-image: url(../images/header-image-lg.jpg);
+    height: 85vh;
+    color: white;
+    background-image: url(../images/header-image-sm.jpg);
     background-color: lightgray;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 85vh;
-    color: white;
+    @include med-screens {
+        background-image: url(../images/header-image-med.jpg);
+    }
+    @include lg-screens {
+        background-image: url(../images/header-image-lg.jpg);
+    }
 }
 
 header {
@@ -70,12 +76,19 @@ header {
 
 main {
     box-shadow: 0 150px 500px 1px rgb(255, 255, 255) inset;
-    background-image: url(../images/abstract-adventure-background-2397652.jpg);
+    background-image: url(../images/sand-sm.jpg);
     background-size: cover;
     background-color: lightgray;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position-y: 100%;
     padding-bottom: 50px;
+    position: relative;
+    @include med-screens {
+        background-image: url(../images/sand-med.jpg);
+    }
+    @include lg-screens {
+        background-image: url(../images/sand-lg.jpg);
+    }
     h2 {
         margin-top: 0;
         padding-top: 30px;
@@ -214,7 +227,7 @@ main {
         h3 {
             font-size: 2.5em;
             margin-top: 20px;
-            text-shadow: 0 1px 3px black;
+            text-shadow: 0 2px 3px black;
             color: white;
             @include sm-screens {
                 margin-top: 100px;
@@ -276,7 +289,18 @@ main {
         }
     }
     
-    
+    #image-attribution {
+        margin: 0;
+        font-size: .5em;
+        text-decoration: none;
+        color: rgb(29, 135, 206);
+        position: absolute;
+        bottom: 0;
+        transition: font-size .3s ease;
+        &:hover {
+            font-size: 1em;
+        }
+    }
 }
 
 footer {

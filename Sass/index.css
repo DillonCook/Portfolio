@@ -404,13 +404,25 @@ html {
 #home {
   position: relative;
   text-align: center;
-  background-image: url(../images/header-image-lg.jpg);
+  height: 85vh;
+  color: white;
+  background-image: url(../images/header-image-sm.jpg);
   background-color: lightgray;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 85vh;
-  color: white;
+}
+
+@media (min-width: 768px) {
+  #home {
+    background-image: url(../images/header-image-med.jpg);
+  }
+}
+
+@media (min-width: 1024px) {
+  #home {
+    background-image: url(../images/header-image-lg.jpg);
+  }
 }
 
 header h1 {
@@ -485,12 +497,25 @@ header .txt-type .txt {
 main {
   -webkit-box-shadow: 0 150px 500px 1px white inset;
           box-shadow: 0 150px 500px 1px white inset;
-  background-image: url(../images/abstract-adventure-background-2397652.jpg);
+  background-image: url(../images/sand-sm.jpg);
   background-size: cover;
   background-color: lightgray;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position-y: 100%;
   padding-bottom: 50px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  main {
+    background-image: url(../images/sand-med.jpg);
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    background-image: url(../images/sand-lg.jpg);
+  }
 }
 
 main h2 {
@@ -663,7 +688,7 @@ main .icon-container {
 main .icon-container h3 {
   font-size: 2.5em;
   margin-top: 20px;
-  text-shadow: 0 1px 3px black;
+  text-shadow: 0 2px 3px black;
   color: white;
 }
 
@@ -756,6 +781,21 @@ main .icon-container .icon-modal p {
   }
 }
 
+main #image-attribution {
+  margin: 0;
+  font-size: .5em;
+  text-decoration: none;
+  color: #1d87ce;
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: font-size .3s ease;
+  transition: font-size .3s ease;
+}
+
+main #image-attribution:hover {
+  font-size: 1em;
+}
+
 footer {
   background-color: #043a66;
   text-align: center;
@@ -800,10 +840,18 @@ footer .linkedin {
 
 #resume-main {
   text-align: center;
+  height: 100vh;
 }
 
 #resume-main .resume {
   margin-top: 150px;
+  width: 90%;
+  max-width: 700px;
+}
+
+#resume-main .fewd {
+  width: 90%;
+  max-width: 700px;
 }
 
 nav {
