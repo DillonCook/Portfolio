@@ -489,20 +489,21 @@ header .txt-type .txt {
 }
 
 main {
-  -webkit-box-shadow: 0 150px 500px 1px white inset;
-          box-shadow: 0 150px 500px 1px white inset;
-  background-image: url(../images/sand-med.jpg);
+  -webkit-box-shadow: 0 50px 500px 1px white inset;
+          box-shadow: 0 50px 500px 1px white inset;
+  background-image: url(../images/sand-lg.jpg);
   background-size: cover;
   background-color: lightgray;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-position-y: 100%;
   padding-bottom: 50px;
   position: relative;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   main {
-    background-image: url(../images/sand-lg.jpg);
+    -webkit-box-shadow: 0 150px 500px 1px white inset;
+            box-shadow: 0 150px 500px 1px white inset;
   }
 }
 
@@ -729,8 +730,8 @@ main .icon-container .icon-modal {
   -webkit-transition: opacity .5s ease;
   transition: opacity .5s ease;
   right: 50%;
-  width: 200px;
-  margin-right: -100px;
+  width: 300px;
+  margin-right: -150px;
   margin-top: 10px;
 }
 
@@ -739,7 +740,7 @@ main .icon-container .icon-modal p {
   text-shadow: 0 1px 2px black;
   font-weight: 600;
   background-color: rgba(0, 0, 0, 0);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   border-radius: 10px;
   padding: 5px;
   margin: 0 auto;
@@ -747,13 +748,13 @@ main .icon-container .icon-modal p {
 
 @media (min-width: 768px) {
   main .icon-container .icon-modal p {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 }
 
 @media (min-width: 1024px) {
   main .icon-container .icon-modal p {
-    font-size: 2em;
+    font-size: 2.5em;
   }
 }
 
@@ -832,10 +833,8 @@ footer .linkedin {
   height: 100vh;
 }
 
-#resume-main .resume {
-  margin-top: 150px;
-  width: 90%;
-  max-width: 700px;
+#resume-main h2 {
+  padding-top: 150px;
 }
 
 #resume-main .fewd {
@@ -1045,6 +1044,7 @@ nav a {
   nav .toggle #bars {
     width: 30px;
     margin: 0 auto;
+    color: #0874CC;
   }
 }
 /*# sourceMappingURL=index.css.map */
