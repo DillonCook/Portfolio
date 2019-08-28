@@ -73,19 +73,15 @@ header {
     }
 }
 
-
 main {
     box-shadow: 0 150px 500px 1px rgb(255, 255, 255) inset;
-    background-image: url(../images/sand-sm.jpg);
+    background-image: url(../images/sand-med.jpg);
     background-size: cover;
     background-color: lightgray;
     background-repeat: repeat;
     background-position-y: 100%;
     padding-bottom: 50px;
     position: relative;
-    @include med-screens {
-        background-image: url(../images/sand-med.jpg);
-    }
     @include lg-screens {
         background-image: url(../images/sand-lg.jpg);
     }

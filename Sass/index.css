@@ -497,19 +497,13 @@ header .txt-type .txt {
 main {
   -webkit-box-shadow: 0 150px 500px 1px white inset;
           box-shadow: 0 150px 500px 1px white inset;
-  background-image: url(../images/sand-sm.jpg);
+  background-image: url(../images/sand-med.jpg);
   background-size: cover;
   background-color: lightgray;
   background-repeat: repeat;
   background-position-y: 100%;
   padding-bottom: 50px;
   position: relative;
-}
-
-@media (min-width: 768px) {
-  main {
-    background-image: url(../images/sand-med.jpg);
-  }
 }
 
 @media (min-width: 1024px) {
