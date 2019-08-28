@@ -406,17 +406,11 @@ html {
   text-align: center;
   height: 85vh;
   color: white;
-  background-image: url(../images/header-image-sm.jpg);
+  background-image: url(../images/header-image-med.jpg);
   background-color: lightgray;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
-
-@media (min-width: 768px) {
-  #home {
-    background-image: url(../images/header-image-med.jpg);
-  }
 }
 
 @media (min-width: 1024px) {

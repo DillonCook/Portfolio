@@ -13,14 +13,11 @@ html {
     text-align: center;
     height: 85vh;
     color: white;
-    background-image: url(../images/header-image-sm.jpg);
+    background-image: url(../images/header-image-med.jpg);
     background-color: lightgray;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    @include med-screens {
-        background-image: url(../images/header-image-med.jpg);
-    }
     @include lg-screens {
         background-image: url(../images/header-image-lg.jpg);
     }
