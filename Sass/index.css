@@ -410,6 +410,28 @@ template {
   }
 }
 
+@-webkit-keyframes exit {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-350px);
+            transform: translateY(-350px);
+  }
+}
+
+@keyframes exit {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-350px);
+            transform: translateY(-350px);
+  }
+}
+
 html {
   font-family: "Raleway", sans-serif;
 }
@@ -450,8 +472,6 @@ html {
   top: 25%;
   right: 0;
   width: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, rgba(255, 255, 255, 0)), to(white));
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, white 100%);
 }
 
 header h1 {
@@ -543,7 +563,7 @@ main h1 {
   text-align: center;
   color: rgba(59, 167, 255, 0.8);
   text-shadow: 0 1px 1px black;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 main #image-attribution {
@@ -884,10 +904,6 @@ nav {
   z-index: 15;
 }
 
-nav a {
-  color: white;
-}
-
 .sticky {
   position: fixed;
   top: 0;
@@ -909,6 +925,7 @@ nav a {
   padding: 10px 15px;
   -webkit-transition: color .4s ease;
   transition: color .4s ease;
+  color: white;
   cursor: pointer;
 }
 
@@ -1006,17 +1023,14 @@ nav a {
     visibility: hidden;
     height: 0;
     opacity: 0;
-    -webkit-transition: height .5s ease, opacity .3s ease, visibility .5s ease;
-    transition: height .5s ease, opacity .3s ease, visibility .5s ease;
+    -webkit-transition: height .5s ease, opacity .5s ease, visibility .5s ease;
+    transition: height .5s ease, opacity .5s ease, visibility .5s ease;
   }
-  nav .menu-show li {
-    list-style-type: none;
-    padding: 2px 0;
-    cursor: pointer;
-  }
-  nav .menu-show li a {
+  nav .menu-show a {
     text-decoration: none;
     font-size: 1.5em;
+    -webkit-animation: exit .4s ease 1;
+            animation: exit .4s ease 1;
   }
   nav .menu-show + .toggle > #bars {
     -webkit-transition: -webkit-transform .5s ease;
@@ -1040,18 +1054,14 @@ nav a {
     visibility: visible;
     height: 200px;
     opacity: 1;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
+    -webkit-transition: height .5s ease, opacity .5s ease, visibility .5s ease;
+    transition: height .5s ease, opacity .5s ease, visibility .5s ease;
   }
-  nav .menu-hide li {
-    margin: 7px 0;
-    list-style-type: none;
-    padding: 2px 0;
-    cursor: pointer;
-  }
-  nav .menu-hide li a {
+  nav .menu-hide a {
     text-decoration: none;
     font-size: 1.5em;
+    -webkit-animation: entrance 1s ease 1;
+            animation: entrance 1s ease 1;
   }
   nav .menu-hide + .toggle > #bars {
     -webkit-transition: -webkit-transform .5s ease;

@@ -4,10 +4,6 @@ nav {
     margin: 0 auto;
     position: absolute; // testing functionality to position drop-down over other elements
     z-index: 15;
-
-    a {
-        color: rgb(255, 255, 255);
-    }
 }
 .sticky {
     position: fixed;
@@ -25,6 +21,7 @@ nav {
     font-weight: 600;
     padding: 10px 15px;
     transition: color .4s ease;
+    color: white;
     cursor: pointer;
     &:hover {
         color: $dark-blue;
@@ -88,16 +85,14 @@ nav {
             visibility: hidden;
             height: 0;
             opacity: 0;
-            transition: height .5s ease, opacity .3s ease, visibility .5s ease;
-            li {
-                list-style-type: none;
-                padding: 2px 0;
-                cursor: pointer;
-                a {
-                    text-decoration: none;
-                    font-size: 1.5em;
-                }
+            transition: height .5s ease, opacity .5s ease, visibility .5s ease;
+            
+            a {
+                text-decoration: none;
+                font-size: 1.5em;
+                animation: exit .4s ease 1;
             }
+            
             & + .toggle > #bars {
                 transition: transform .5s ease;
                 transform: rotate(0deg);
@@ -112,17 +107,14 @@ nav {
             visibility: visible;
             height: 200px;
             opacity: 1;
-            transition: all .5s ease;
-            li {
-                margin: 7px 0;
-                list-style-type: none;
-                padding: 2px 0;
-                cursor: pointer;
-                a {
-                    text-decoration: none;
-                    font-size: 1.5em;
-                }
+            transition: height .5s ease, opacity .5s ease, visibility .5s ease;
+            a {
+                text-decoration: none;
+                font-size: 1.5em;
+                animation: entrance 1s ease 1;
+
             }
+        
             & + .toggle > #bars {
                 transition: transform .5s ease;
                 transform: rotate(90deg);

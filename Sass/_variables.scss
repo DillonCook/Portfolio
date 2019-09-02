@@ -31,3 +31,12 @@ $primary-font: 'Raleway', sans-serif;
          transform: translateY(0);
      }
 }
+
+@keyframes exit {
+    0% {
+        transform: translateY(0);
+    }
+     100% {
+         transform: translateY(-350px);
+     }
+}
