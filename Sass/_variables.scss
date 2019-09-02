@@ -22,3 +22,12 @@ $primary-font: 'Raleway', sans-serif;
         
     }
 }
+
+@keyframes entrance {
+    0% {
+        transform: translateY(-350px);
+    }
+     100% {
+         transform: translateY(0);
+     }
+}

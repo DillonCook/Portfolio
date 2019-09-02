@@ -1,0 +1,71 @@
+.icon-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    h3 {
+        font-size: 2.5em;
+        margin-top: 20px;
+        text-shadow: 0 2px 3px black;
+        color: white;
+        @include sm-screens {
+            margin-top: 100px;
+        }
+        @include med-screens {
+            font-size: 3em;
+        }
+        @include lg-screens {
+            font-size: 3em;
+            margin-bottom: 25px;
+        }
+    }
+    .icon {
+        font-size: 2em;
+        padding: 0 5px;
+        color: $blue;
+        text-shadow: 0 1px 2px black;
+        &:hover {
+            color: white;
+        }
+        @include sm-screens {
+            font-size: 2.2em;
+            padding: 0 10px;
+        }
+        @include med-screens {
+            font-size: 2.5em;
+        }
+        @include lg-screens {
+            padding: 25px;
+            font-size: 3.5em;
+        }
+    }
+    .icon-modal {
+        position: absolute;
+        opacity: 0;
+        transition: opacity .5s ease;
+        right: 50%;
+        width: 500px;
+        margin-right: -250px;
+        margin-top: 10px;
+        p {
+            color: $dark-blue;
+            text-shadow: 0 1px 2px black;
+            font-weight: 600;
+            background-color: rgba(0, 0, 0, 0);
+            font-size: 1.5rem;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 0 auto;
+            @include med-screens {
+                font-size: 2em;
+            }
+            @include lg-screens {
+                font-size: 2.5em;
+            }
+        }
+        @include med-screens {
+            margin-top: 25px;
+        }
+        
+    }
+}

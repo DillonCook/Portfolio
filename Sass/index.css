@@ -388,6 +388,28 @@ template {
   }
 }
 
+@-webkit-keyframes entrance {
+  0% {
+    -webkit-transform: translateY(-350px);
+            transform: translateY(-350px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes entrance {
+  0% {
+    -webkit-transform: translateY(-350px);
+            transform: translateY(-350px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 html {
   font-family: "Raleway", sans-serif;
 }
@@ -407,6 +429,7 @@ html {
   height: 85vh;
   color: white;
   background-image: url(../images/header-image-med.jpg);
+  background-attachment: fixed;
   background-color: lightgray;
   background-repeat: no-repeat;
   background-size: cover;
@@ -419,12 +442,27 @@ html {
   }
 }
 
+#home::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, rgba(255, 255, 255, 0)), to(white));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, white 100%);
+}
+
 header h1 {
   margin-top: 0;
   padding-top: 170px;
   font-size: 4rem;
   margin-bottom: 10px;
   text-shadow: 0 2px 5px black;
+  -webkit-animation: entrance 1s ease .5s 1;
+          animation: entrance 1s ease .5s 1;
 }
 
 @media (min-width: 375px) {
@@ -489,9 +527,8 @@ header .txt-type .txt {
 }
 
 main {
-  -webkit-box-shadow: 0 50px 500px 1px white inset;
-          box-shadow: 0 50px 500px 1px white inset;
   background-image: url(../images/sand-lg.jpg);
+  background-attachment: fixed;
   background-size: cover;
   background-color: lightgray;
   background-repeat: no-repeat;
@@ -500,275 +537,15 @@ main {
   position: relative;
 }
 
-@media (min-width: 768px) {
-  main {
-    -webkit-box-shadow: 0 150px 500px 1px white inset;
-            box-shadow: 0 150px 500px 1px white inset;
-  }
-}
-
-main h2 {
+main h1 {
   margin-top: 0;
-  padding-top: 30px;
+  padding: 5vh 0;
   font-size: 4em;
   text-align: center;
-  color: #0874CC;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.75);
-  -webkit-animation: dancing 9s infinite;
-          animation: dancing 9s infinite;
-}
-
-main .container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(320px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  grid-gap: 25px;
-  margin: 0 auto;
-  position: relative;
-}
-
-@media (min-width: 375px) {
-  main .container {
-    width: 90%;
-  }
-}
-
-main .container .card {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  border-radius: 12px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  margin: auto auto;
-  background-color: rgba(59, 167, 255, 0.8);
-  border: 2px solid white;
-  height: 100%;
-}
-
-main .container .card .info-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 95%;
-  margin: 0 auto;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  text-align: center;
-}
-
-main .container .card .info-row .view-more {
-  -webkit-animation: dancing 12s infinite;
-          animation: dancing 12s infinite;
-  margin: auto 0;
-  color: white;
-  font-weight: 600;
-  border-bottom: 1px solid white;
-  border-radius: 5px;
-  padding-bottom: 2px;
-  cursor: pointer;
-}
-
-main .container .card .icon-modal {
-  position: absolute;
-  color: white;
-  margin: auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  text-align: center;
-  margin: auto;
-  padding: 0 5px;
-  border-radius: 10px;
-  background-color: rgba(59, 167, 255, 0.8);
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  z-index: 9;
-  font-weight: bold;
-  opacity: 0;
-}
-
-main .container .card .image-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-bottom: 4px;
-  -webkit-box-shadow: 0 3px 5px -1px black;
-          box-shadow: 0 3px 5px -1px black;
-  width: 100%;
-  border-bottom: 2px solid white;
-}
-
-main .container .card .image-container .thumbnail {
-  position: relative;
-  margin-bottom: -8px;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: -webkit-filter .4s ease, -webkit-transform .4s ease;
-  transition: -webkit-filter .4s ease, -webkit-transform .4s ease;
-  transition: filter .4s ease, transform .4s ease;
-  transition: filter .4s ease, transform .4s ease, -webkit-filter .4s ease, -webkit-transform .4s ease;
-}
-
-main .container .card .image-container .overlay {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.75);
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  z-index: 10;
-  font-size: 1.5rem;
-}
-
-main .container .card .image-container .overlay p {
-  width: 95%;
-  height: 100%;
-  text-align: center;
-  margin: 10px auto auto;
-  line-height: 1;
-}
-
-main .container .card .icon-div {
-  margin: auto 0;
-}
-
-main .container .card .icon {
-  color: rgba(0, 0, 0, 0.75);
-  text-shadow: 0 0 2px white;
-  font-size: 2em;
-  padding: 1px;
-}
-
-main .container .card .icon:hover {
-  color: black;
-}
-
-@media (min-width: 1024px) {
-  main .container {
-    -ms-grid-columns: auto auto auto;
-        grid-template-columns: auto auto auto;
-  }
-}
-
-main .icon-container {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-main .icon-container h3 {
-  font-size: 2.5em;
-  margin-top: 20px;
-  text-shadow: 0 2px 3px black;
-  color: white;
-}
-
-@media (min-width: 375px) {
-  main .icon-container h3 {
-    margin-top: 100px;
-  }
-}
-
-@media (min-width: 768px) {
-  main .icon-container h3 {
-    font-size: 3em;
-  }
-}
-
-@media (min-width: 1024px) {
-  main .icon-container h3 {
-    font-size: 3em;
-    margin-bottom: 25px;
-  }
-}
-
-main .icon-container .icon {
-  font-size: 2.5em;
-  padding: 0 10px;
   color: rgba(59, 167, 255, 0.8);
-  text-shadow: 0 1px 2px black;
-}
-
-main .icon-container .icon:hover {
-  color: white;
-}
-
-@media (min-width: 768px) {
-  main .icon-container .icon {
-    font-size: 2.5em;
-  }
-}
-
-@media (min-width: 1024px) {
-  main .icon-container .icon {
-    padding: 25px;
-    font-size: 3.5em;
-  }
-}
-
-main .icon-container .icon-modal {
-  position: absolute;
-  opacity: 0;
-  -webkit-transition: opacity .5s ease;
-  transition: opacity .5s ease;
-  right: 50%;
-  width: 300px;
-  margin-right: -150px;
-  margin-top: 10px;
-}
-
-main .icon-container .icon-modal p {
-  color: #0874CC;
-  text-shadow: 0 1px 2px black;
-  font-weight: 600;
-  background-color: rgba(0, 0, 0, 0);
-  font-size: 1.5rem;
-  border-radius: 10px;
-  padding: 5px;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  main .icon-container .icon-modal p {
-    font-size: 2em;
-  }
-}
-
-@media (min-width: 1024px) {
-  main .icon-container .icon-modal p {
-    font-size: 2.5em;
-  }
-}
-
-@media (min-width: 768px) {
-  main .icon-container .icon-modal {
-    margin-top: 25px;
-  }
-}
-
-@media (min-width: 1024px) {
-  main .icon-container .icon-modal {
-    width: 300px;
-    margin-right: -150px;
-  }
+  text-shadow: 0 1px 1px black;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(40%, rgba(255, 255, 255, 0)), to(white));
+  background: linear-gradient(to top, rgba(255, 255, 255, 0) 40%, white 100%);
 }
 
 main #image-attribution {
@@ -824,6 +601,266 @@ footer .linkedin {
   cursor: pointer;
 }
 
+.main-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(320px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-gap: 25px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (min-width: 375px) {
+  .main-container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-container {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+}
+
+.main-container .card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 12px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin: auto auto;
+  background-color: rgba(59, 167, 255, 0.8);
+  border: 2px solid white;
+  height: 100%;
+}
+
+.main-container .card .info-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 95%;
+  margin: 0 auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+}
+
+.main-container .card .info-row .view-more {
+  -webkit-animation: dancing 12s infinite;
+          animation: dancing 12s infinite;
+  margin: auto 0;
+  color: white;
+  font-weight: 600;
+  border-bottom: 1px solid white;
+  border-radius: 5px;
+  padding-bottom: 2px;
+  cursor: pointer;
+  -webkit-transition: border .4s ease;
+  transition: border .4s ease;
+}
+
+.main-container .card .info-row .view-more:hover {
+  border-bottom: 1px solid #043a66;
+}
+
+.main-container .card .icon-modal {
+  position: absolute;
+  color: white;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+  margin: auto;
+  padding: 0 5px;
+  border-radius: 10px;
+  background-color: rgba(59, 167, 255, 0.8);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  z-index: 9;
+  font-weight: bold;
+  opacity: 0;
+}
+
+.main-container .card .image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  -webkit-box-shadow: 0 3px 5px -1px black;
+          box-shadow: 0 3px 5px -1px black;
+  width: 100%;
+  border-bottom: 2px solid white;
+}
+
+.main-container .card .image-container .thumbnail {
+  position: relative;
+  margin-bottom: -8px;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-filter .4s ease, -webkit-transform .4s ease;
+  transition: -webkit-filter .4s ease, -webkit-transform .4s ease;
+  transition: filter .4s ease, transform .4s ease;
+  transition: filter .4s ease, transform .4s ease, -webkit-filter .4s ease, -webkit-transform .4s ease;
+}
+
+.main-container .card .image-container .overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  z-index: 10;
+  font-size: 1.5rem;
+  padding: 7% 3%;
+}
+
+.main-container .card .image-container .overlay p {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+}
+
+.main-container .card .icon-div {
+  margin: auto 0;
+}
+
+.main-container .card .icon {
+  color: rgba(0, 0, 0, 0.75);
+  text-shadow: 0 0 2px white;
+  font-size: 2em;
+  padding: 1px;
+}
+
+.main-container .card .icon:hover {
+  color: black;
+}
+
+.icon-container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.icon-container h3 {
+  font-size: 2.5em;
+  margin-top: 20px;
+  text-shadow: 0 2px 3px black;
+  color: white;
+}
+
+@media (min-width: 375px) {
+  .icon-container h3 {
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 768px) {
+  .icon-container h3 {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .icon-container h3 {
+    font-size: 3em;
+    margin-bottom: 25px;
+  }
+}
+
+.icon-container .icon {
+  font-size: 2em;
+  padding: 0 5px;
+  color: rgba(59, 167, 255, 0.8);
+  text-shadow: 0 1px 2px black;
+}
+
+.icon-container .icon:hover {
+  color: white;
+}
+
+@media (min-width: 375px) {
+  .icon-container .icon {
+    font-size: 2.2em;
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .icon-container .icon {
+    font-size: 2.5em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .icon-container .icon {
+    padding: 25px;
+    font-size: 3.5em;
+  }
+}
+
+.icon-container .icon-modal {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+  right: 50%;
+  width: 500px;
+  margin-right: -250px;
+  margin-top: 10px;
+}
+
+.icon-container .icon-modal p {
+  color: #0874CC;
+  text-shadow: 0 1px 2px black;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .icon-container .icon-modal p {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .icon-container .icon-modal p {
+    font-size: 2.5em;
+  }
+}
+
+@media (min-width: 768px) {
+  .icon-container .icon-modal {
+    margin-top: 25px;
+  }
+}
+
 #resume-header {
   text-align: center;
 }
@@ -835,6 +872,7 @@ footer .linkedin {
 
 #resume-main h2 {
   padding-top: 150px;
+  margin-top: 0;
 }
 
 #resume-main .fewd {
@@ -871,8 +909,8 @@ nav a {
   font-size: 1.5em;
   font-weight: 600;
   padding: 10px 15px;
-  -webkit-transition: color .6s ease, font-size .4s ease;
-  transition: color .6s ease, font-size .4s ease;
+  -webkit-transition: color .4s ease;
+  transition: color .4s ease;
   cursor: pointer;
 }
 

@@ -24,11 +24,10 @@ nav {
     font-size: 1.5em;
     font-weight: 600;
     padding: 10px 15px;
-    transition: color .6s ease, font-size .4s ease;
+    transition: color .4s ease;
     cursor: pointer;
     &:hover {
         color: $dark-blue;
-        
     }
 }
 @media (min-width: 551px) {

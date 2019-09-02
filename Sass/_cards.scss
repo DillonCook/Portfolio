@@ -1,0 +1,115 @@
+.main-container { // holds all project cards - projects
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    grid-template-rows: auto;
+    grid-gap: 25px;
+    
+    margin: 0 auto;
+    position: relative;
+    @include sm-screens {
+        width: 90%;
+    }
+    @include lg-screens {
+        grid-template-columns: auto auto auto;
+    }
+    .card { // each project's front
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 12px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin: auto auto;
+        background-color: $blue;
+        border: 2px solid white;
+        height: 100%;
+        .info-row { // holds row items under images
+           display: flex;
+           width: 95%;
+           margin: 0 auto;
+           justify-content: space-between;
+           text-align: center;
+            .view-more { //button to click to activate animation
+                animation: dancing 12s infinite;
+                margin: auto 0;
+                color: white;
+                font-weight: 600;
+                border-bottom: 1px solid white;
+                border-radius: 5px;
+                padding-bottom: 2px;
+                cursor: pointer;
+                transition: border .4s ease;
+                &:hover {
+                    border-bottom: 1px solid $darker-blue;
+                }
+            }
+        }
+        .icon-modal { // blue pop up display hovering over icon
+            position: absolute;
+            color: white;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            text-align: center;
+            margin: auto;
+            padding: 0 5px;
+            border-radius: 10px;
+            background-color: $blue;
+            transition: all .5s ease;
+            z-index: 9;
+            font-weight: bold;
+            opacity: 0;
+        }
+        .image-container{ // thumbnail's individual container to hold thumbnail and overlay
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 4px;
+            box-shadow: 0 3px 5px -1px rgb(0, 0, 0);
+            width: 100%;
+            border-bottom: 2px solid white;
+            .thumbnail { // underlying image
+                position: relative;
+                margin-bottom: -8px;
+                width: 100%;
+                height: 100%;
+                transition: filter .4s ease, transform .4s ease;
+            }
+            .overlay { // sits on top of image allows for hovering and clicking
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;              
+                color: white;
+                background-color: rgba(0, 0, 0, 0.75);
+                transition: all .5s ease;
+                z-index: 10;
+                font-size: 1.5rem;
+                padding: 7% 3%;
+                p {
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    margin: 0;
+                    line-height: 1;
+                }
+            }
+        }
+        .icon-div {
+            margin: auto 0;
+        }
+        .icon { // individual icons 
+            color: rgba(0, 0, 0, .75);
+            text-shadow: 0 0 2px white;
+            font-size: 2em;
+            padding: 1px;
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}
