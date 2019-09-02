@@ -461,8 +461,8 @@ header h1 {
   font-size: 4rem;
   margin-bottom: 10px;
   text-shadow: 0 2px 5px black;
-  -webkit-animation: entrance 1s ease .5s 1;
-          animation: entrance 1s ease .5s 1;
+  -webkit-animation: entrance 1s ease 1;
+          animation: entrance 1s ease 1;
 }
 
 @media (min-width: 375px) {
