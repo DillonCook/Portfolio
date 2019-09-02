@@ -42,7 +42,7 @@ header {
         font-size: 4rem;
         margin-bottom: 10px;
         text-shadow: 0 2px 5px black;
-        animation: entrance 1s ease 1;
+        animation: entrance 1s ease;
         @include sm-screens {
             padding-top: 223px;
             @include landscape {
