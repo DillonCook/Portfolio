@@ -390,8 +390,8 @@ template {
 
 @-webkit-keyframes entrance {
   0% {
-    -webkit-transform: translateY(-350px);
-            transform: translateY(-350px);
+    -webkit-transform: translateY(-550px);
+            transform: translateY(-550px);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -401,12 +401,34 @@ template {
 
 @keyframes entrance {
   0% {
-    -webkit-transform: translateY(-350px);
-            transform: translateY(-350px);
+    -webkit-transform: translateY(-550px);
+            transform: translateY(-550px);
   }
   100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes opposite-entrance {
+  0% {
+    -webkit-transform: translateY(450px);
+            transform: translateY(450px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes opposite-entrance {
+  0% {
+    -webkit-transform: translateY(450px);
+            transform: translateY(450px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
@@ -484,10 +506,17 @@ html {
 }
 
 #home {
+  background-image: url(../images/header-image-med.jpg);
+  background-color: gray;
   position: relative;
   text-align: center;
-  height: 85vh;
+  height: 100vh;
   color: white;
+  background-attachment: fixed;
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 @media (min-width: 1024px) {
@@ -496,72 +525,67 @@ html {
   }
 }
 
-#home .background-image-container {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: url(../images/header-image-med.jpg);
-  background-attachment: fixed;
-  background-color: lightgray;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-}
-
-header h1 {
+#home .name {
   margin-top: 0;
   padding-top: 170px;
   font-size: 4rem;
   margin-bottom: 10px;
   text-shadow: 0 2px 5px black;
-  -webkit-animation: entrance 1s ease;
-          animation: entrance 1s ease;
+  -webkit-animation: entrance 1.75s ease;
+          animation: entrance 1.75s ease;
 }
 
 @media (min-width: 375px) {
-  header h1 {
+  #home .name {
     padding-top: 223px;
   }
 }
 
 @media (min-width: 375px) and (orientation: landscape) {
-  header h1 {
+  #home .name {
     padding-top: 115px;
   }
 }
 
 @media (min-width: 768px) {
-  header h1 {
+  #home .name {
     font-size: 6rem;
   }
 }
 
 @media (min-width: 768px) and (min-width: 825px) {
-  header h1 {
+  #home .name {
     padding-top: 225px;
   }
 }
 
+@media (orientation: landscape) and (min-width: 768px) {
+  #home .name {
+    font-size: 5em;
+  }
+}
+
 @media (min-width: 1024px) {
-  header h1 {
+  #home .name {
     font-size: 7rem;
     padding-top: 250px;
   }
 }
 
 @media (min-width: 1024px) and (orientation: landscape) {
-  header h1 {
+  #home .name {
     padding-top: 205px !important;
   }
 }
 
-header .txt-type {
+#home .txt-type {
   margin-top: 10px;
   text-shadow: 0 2px 5px black;
+  -webkit-animation: entrance 1s ease 1;
+          animation: entrance 1s ease 1;
 }
 
-header .txt-type .txt {
+#home .txt-type .txt {
   border-right: 3px solid white;
   font-size: 1.5em;
   padding-right: 3px;
@@ -570,19 +594,137 @@ header .txt-type .txt {
 }
 
 @media (min-width: 768px) {
-  header .txt-type {
+  #home .txt-type {
     font-size: 2em;
   }
 }
 
 @media (min-width: 1024px) {
-  header .txt-type {
+  #home .txt-type {
     font-size: 2.5em;
     margin-top: 20px;
   }
 }
 
-main {
+#home #about-me {
+  padding: 30px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+  background-color: rgba(212, 212, 212, 0.7);
+  text-shadow: 0 2px 5px black;
+  font-size: 1.5em;
+}
+
+#home #about-me:hover {
+  background-color: rgba(187, 187, 187, 0.7);
+  cursor: pointer;
+}
+
+@media (orientation: landscape) {
+  #home #about-me {
+    padding: 20px 0;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 768px) {
+  #home #about-me {
+    padding: 20px 0;
+  }
+}
+
+@media (min-width: 375px) {
+  #home #about-me {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 768px) {
+  #home #about-me {
+    font-size: 3em;
+  }
+}
+
+.about-section {
+  position: relative;
+  background-color: #dddddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+  margin: auto;
+}
+
+.about-section h2 {
+  text-align: center;
+  font-size: 2em;
+  width: 95%;
+  margin: 45px auto 0;
+}
+
+.about-section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 0;
+}
+
+@media (min-width: 768px) {
+  .about-section .container {
+    width: 80%;
+    margin: 20px auto;
+    display: block;
+    max-width: 900px;
+  }
+}
+
+.about-section .container p {
+  margin: auto;
+  width: 90%;
+  padding: 20px 0;
+}
+
+@media (min-width: 768px) {
+  .about-section .container p {
+    width: 100%;
+  }
+}
+
+.about-section .container img {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  .about-section .container img {
+    float: right;
+    width: 50%;
+    max-width: 340px;
+    margin: 0 0 15px 15px;
+  }
+}
+
+main .project-container {
   background-image: url(../images/sand-lg.jpg);
   background-attachment: fixed;
   background-size: cover;
@@ -597,10 +739,10 @@ main h1 {
   margin-top: 0;
   padding: 5vh 0;
   font-size: 4em;
+  color: white;
   text-align: center;
-  color: rgba(59, 167, 255, 0.8);
-  text-shadow: 0 1px 1px black;
-  background-color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 2px 5px black;
+  background-color: rgba(212, 212, 212, 0.7);
 }
 
 main #image-attribution {
@@ -623,6 +765,23 @@ footer {
   text-align: center;
 }
 
+footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-bottom: 35px;
+}
+
+footer .container .card {
+  background-color: rgba(212, 212, 212, 0.7);
+  width: 30%;
+  border-radius: 5px;
+  border: 2px solid white;
+}
+
 footer h1 {
   margin: 0 auto 25px;
   padding-top: 40px;
@@ -631,9 +790,18 @@ footer h1 {
   text-shadow: 0 1px 2px black;
 }
 
+footer h2 {
+  color: white;
+}
+
+footer h3 {
+  font-size: 1.4em;
+}
+
 footer h3, footer h4 {
   color: white;
   text-shadow: 0 1px 2px black;
+  margin: 12px 0;
 }
 
 footer svg {
@@ -923,6 +1091,7 @@ footer .linkedin {
 #resume-main {
   text-align: center;
   height: 100vh;
+  background-image: url(../images/sand-lg.jpg);
 }
 
 #resume-main h2 {
@@ -933,6 +1102,8 @@ footer .linkedin {
 #resume-main .fewd {
   width: 90%;
   max-width: 700px;
+  -webkit-box-shadow: 0 1px 5px -1px black;
+          box-shadow: 0 1px 5px -1px black;
 }
 
 nav {
@@ -999,34 +1170,30 @@ nav {
         -ms-flex-align: center;
             align-items: center;
     list-style-type: none;
+    -webkit-animation: entrance .75s ease-out 1;
+            animation: entrance .75s ease-out 1;
   }
   nav .nav #nav-home {
     margin-right: auto;
   }
   nav .nav a {
-    -webkit-animation: dancing 6s ease infinite;
-            animation: dancing 6s ease infinite;
     text-shadow: 0 2px 3px black;
   }
   nav .nav a:nth-child(1) {
-    -webkit-animation-delay: .5s;
-            animation-delay: .5s;
+    -webkit-animation: dancing 6s ease 1s infinite, entrance 1s ease 1;
+            animation: dancing 6s ease 1s infinite, entrance 1s ease 1;
   }
   nav .nav a:nth-child(2) {
-    -webkit-animation-delay: 1s;
-            animation-delay: 1s;
+    -webkit-animation: dancing 6s ease 1.5s infinite, entrance 1.2s ease 1;
+            animation: dancing 6s ease 1.5s infinite, entrance 1.2s ease 1;
   }
   nav .nav a:nth-child(3) {
-    -webkit-animation-delay: 1.5s;
-            animation-delay: 1.5s;
+    -webkit-animation: dancing 6s ease 2s infinite, entrance 1.4s ease 1;
+            animation: dancing 6s ease 2s infinite, entrance 1.4s ease 1;
   }
   nav .nav a:nth-child(4) {
-    -webkit-animation-delay: 2s;
-            animation-delay: 2s;
-  }
-  nav .nav a:hover {
-    -webkit-animation: none;
-            animation: none;
+    -webkit-animation: dancing 6s ease 2.5s infinite, entrance 1.6s ease 1;
+            animation: dancing 6s ease 2.5s infinite, entrance 1.6s ease 1;
   }
   nav .nav .container {
     display: -webkit-box;

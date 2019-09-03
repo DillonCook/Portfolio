@@ -79,6 +79,13 @@ $('#nav-home').click(() => {
   }, 400);
 });
 
+$('#about-me').click(() => {
+  $('html, body').animate({
+      scrollTop: $('#about-me').offset().top
+  }, 500);
+});
+
+
 // ================ Typewriter Effect ============================================================================
 
 const typeWriter = function (txtElement, words, wait = 2500) {

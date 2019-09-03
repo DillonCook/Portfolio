@@ -25,15 +25,19 @@ $primary-font: 'Raleway', sans-serif;
 
 @keyframes entrance {
     0% {
-        transform: translateY(-350px);
+        transform: translateY(-550px);
     }
-    
-    // 50% {
-    //     color: black;
-    // }
-    
     100% {
         transform: translateY(0);
+    }
+}
+
+@keyframes opposite-entrance {
+    0% {
+        transform: translateY(450px);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 

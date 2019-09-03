@@ -3,7 +3,6 @@
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
     grid-template-rows: auto;
     grid-gap: 25px;
-    
     margin: 0 auto;
     position: relative;
     @include sm-screens {
