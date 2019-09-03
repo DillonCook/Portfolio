@@ -27,16 +27,23 @@ $primary-font: 'Raleway', sans-serif;
     0% {
         transform: translateY(-350px);
     }
-     100% {
-         transform: translateY(0);
-     }
+    
+    // 50% {
+    //     color: black;
+    // }
+    
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes exit {
     0% {
         transform: translateY(0);
     }
-     100% {
-         transform: translateY(-350px);
-     }
+    
+    100% {
+        color: white;
+        transform: translateY(-350px);
+    }
 }

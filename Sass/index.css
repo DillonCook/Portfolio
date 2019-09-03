@@ -416,6 +416,7 @@ template {
             transform: translateY(0);
   }
   100% {
+    color: white;
     -webkit-transform: translateY(-350px);
             transform: translateY(-350px);
   }
@@ -427,6 +428,7 @@ template {
             transform: translateY(0);
   }
   100% {
+    color: white;
     -webkit-transform: translateY(-350px);
             transform: translateY(-350px);
   }
@@ -1022,15 +1024,14 @@ nav {
     background-color: rgba(0, 0, 0, 0.75);
     visibility: hidden;
     height: 0;
-    opacity: 0;
-    -webkit-transition: height .5s ease, opacity .5s ease, visibility .5s ease;
-    transition: height .5s ease, opacity .5s ease, visibility .5s ease;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
   }
   nav .menu-show a {
     text-decoration: none;
     font-size: 1.5em;
-    -webkit-animation: exit .4s ease 1;
-            animation: exit .4s ease 1;
+    -webkit-animation: exit .5s ease-out 1;
+            animation: exit .5s ease-out 1;
   }
   nav .menu-show + .toggle > #bars {
     -webkit-transition: -webkit-transform .5s ease;
@@ -1053,15 +1054,14 @@ nav {
     background-color: rgba(0, 0, 0, 0.75);
     visibility: visible;
     height: 200px;
-    opacity: 1;
-    -webkit-transition: height .5s ease, opacity .5s ease, visibility .5s ease;
-    transition: height .5s ease, opacity .5s ease, visibility .5s ease;
+    -webkit-transition: height .5s ease,  visibility .5s ease;
+    transition: height .5s ease,  visibility .5s ease;
   }
   nav .menu-hide a {
     text-decoration: none;
     font-size: 1.5em;
-    -webkit-animation: entrance 1s ease 1;
-            animation: entrance 1s ease 1;
+    -webkit-animation: entrance .8s ease 1;
+            animation: entrance .8s ease 1;
   }
   nav .menu-hide + .toggle > #bars {
     -webkit-transition: -webkit-transform .5s ease;

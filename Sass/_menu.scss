@@ -84,13 +84,12 @@ nav {
             background-color: rgba(0, 0, 0, 0.75);
             visibility: hidden;
             height: 0;
-            opacity: 0;
-            transition: height .5s ease, opacity .5s ease, visibility .5s ease;
+            transition: all .5s ease;
             
             a {
                 text-decoration: none;
                 font-size: 1.5em;
-                animation: exit .4s ease 1;
+                animation: exit .5s ease-out 1;
             }
             
             & + .toggle > #bars {
@@ -106,12 +105,11 @@ nav {
             background-color: rgba(0, 0, 0, 0.75);
             visibility: visible;
             height: 200px;
-            opacity: 1;
-            transition: height .5s ease, opacity .5s ease, visibility .5s ease;
+            transition: height .5s ease,  visibility .5s ease;
             a {
                 text-decoration: none;
                 font-size: 1.5em;
-                animation: entrance 1s ease 1;
+                animation: entrance .8s ease 1;
 
             }
         
