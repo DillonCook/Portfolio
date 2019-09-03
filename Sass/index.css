@@ -434,6 +434,42 @@ template {
   }
 }
 
+@-webkit-keyframes phasing {
+  0% {
+    border-right: 3px solid white;
+  }
+  25% {
+    border-right: 3px solid rgba(255, 255, 255, 0);
+  }
+  50% {
+    border-right: 3px solid white;
+  }
+  75% {
+    border-right: 3px solid rgba(255, 255, 255, 0);
+  }
+  100% {
+    border-right: 3px solid white;
+  }
+}
+
+@keyframes phasing {
+  0% {
+    border-right: 3px solid white;
+  }
+  25% {
+    border-right: 3px solid rgba(255, 255, 255, 0);
+  }
+  50% {
+    border-right: 3px solid white;
+  }
+  75% {
+    border-right: 3px solid rgba(255, 255, 255, 0);
+  }
+  100% {
+    border-right: 3px solid white;
+  }
+}
+
 html {
   font-family: "Raleway", sans-serif;
 }
@@ -452,12 +488,6 @@ html {
   text-align: center;
   height: 85vh;
   color: white;
-  background-image: url(../images/header-image-med.jpg);
-  background-attachment: fixed;
-  background-color: lightgray;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 @media (min-width: 1024px) {
@@ -466,14 +496,17 @@ html {
   }
 }
 
-#home::after {
-  content: "";
+#home .background-image-container {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  top: 25%;
-  right: 0;
+  height: 100%;
   width: 100%;
+  background-image: url(../images/header-image-med.jpg);
+  background-attachment: fixed;
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
 
 header h1 {
@@ -532,6 +565,8 @@ header .txt-type .txt {
   border-right: 3px solid white;
   font-size: 1.5em;
   padding-right: 3px;
+  -webkit-animation: phasing 2.5s infinite .5s;
+          animation: phasing 2.5s infinite .5s;
 }
 
 @media (min-width: 768px) {
@@ -1054,8 +1089,8 @@ nav {
     background-color: rgba(0, 0, 0, 0.75);
     visibility: visible;
     height: 200px;
-    -webkit-transition: height .5s ease,  visibility .5s ease;
-    transition: height .5s ease,  visibility .5s ease;
+    -webkit-transition: height .5s ease, visibility .5s ease;
+    transition: height .5s ease, visibility .5s ease;
   }
   nav .menu-hide a {
     text-decoration: none;

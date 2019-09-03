@@ -47,3 +47,21 @@ $primary-font: 'Raleway', sans-serif;
         transform: translateY(-350px);
     }
 }
+
+@keyframes phasing {
+    0% {
+        border-right: 3px solid white;
+    }
+    25% {
+        border-right: 3px solid rgba(255, 255, 255, 0);
+    }
+    50% {
+        border-right: 3px solid white;
+    }
+    75% {
+        border-right: 3px solid rgba(255, 255, 255, 0);
+    }
+    100% {
+        border-right: 3px solid rgb(255, 255, 255);
+    }
+}
