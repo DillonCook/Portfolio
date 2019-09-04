@@ -412,8 +412,8 @@ template {
 
 @-webkit-keyframes opposite-entrance {
   0% {
-    -webkit-transform: translateY(450px);
-            transform: translateY(450px);
+    -webkit-transform: translateY(150px);
+            transform: translateY(150px);
   }
   100% {
     -webkit-transform: translateX(0);
@@ -423,8 +423,8 @@ template {
 
 @keyframes opposite-entrance {
   0% {
-    -webkit-transform: translateY(450px);
-            transform: translateY(450px);
+    -webkit-transform: translateY(150px);
+            transform: translateY(150px);
   }
   100% {
     -webkit-transform: translateX(0);
@@ -616,9 +616,14 @@ html {
   background-color: rgba(212, 212, 212, 0.7);
   text-shadow: 0 2px 5px black;
   font-size: 1.5em;
+  -webkit-transition: background-color .3s ease, color .3s ease;
+  transition: background-color .3s ease, color .3s ease;
+  -webkit-animation: opposite-entrance 1s ease 1;
+          animation: opposite-entrance 1s ease 1;
 }
 
 #home #about-me:hover {
+  color: #e6e6e6;
   background-color: rgba(187, 187, 187, 0.7);
   cursor: pointer;
 }
@@ -649,7 +654,7 @@ html {
 
 .about-section {
   position: relative;
-  background-color: #dddddd;
+  background-color: #e7e7e7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -742,7 +747,7 @@ main h1 {
   color: white;
   text-align: center;
   text-shadow: 0 2px 5px black;
-  background-color: rgba(212, 212, 212, 0.7);
+  background-color: rgba(212, 212, 212, 0.5);
 }
 
 main #image-attribution {
@@ -769,17 +774,40 @@ footer .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  margin-bottom: 35px;
+  margin: 0 auto 35px;
+  max-width: 1200px;
+}
+
+@media (min-width: 768px) {
+  footer .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 footer .container .card {
   background-color: rgba(212, 212, 212, 0.7);
-  width: 30%;
   border-radius: 5px;
   border: 2px solid white;
+  margin: 10px auto;
+  padding: 0 10px;
+  width: 70%;
+}
+
+@media (min-width: 768px) {
+  footer .container .card {
+    width: 28%;
+    margin: 0;
+  }
 }
 
 footer h1 {

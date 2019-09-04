@@ -87,7 +87,10 @@ html {
         background-color: rgba(212, 212, 212, 0.7);
         text-shadow: 0 2px 5px black;
         font-size: 1.5em;
+        transition: background-color .3s ease, color .3s ease;
+        animation: opposite-entrance 1s ease 1;
         &:hover {
+            color: darken($color: white, $amount: 10%);
             background-color: darken($color: rgba(212, 212, 212, 0.7), $amount: 10%);
             cursor: pointer;
         }
@@ -110,7 +113,7 @@ html {
 // ------------------------- ABOUT SECTION ----------------------------
 .about-section {
     position: relative;
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(231, 231, 231);
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -179,7 +182,7 @@ main {
         color: white;
         text-align: center;
         text-shadow: 0 2px 5px black;
-        background-color: rgba(212, 212, 212, 0.7);
+        background-color: rgba(212, 212, 212, 0.5);
     }
     
     #image-attribution {
@@ -202,13 +205,24 @@ footer {
     text-align: center;
     .container {
         display: flex;
+        flex-direction: column;
         justify-content: space-evenly;
-        margin-bottom: 35px;
+        margin: 0 auto 35px;
+        max-width: 1200px;
+        @include med-screens {
+            flex-direction: row;
+        }
         .card {
             background-color: rgba(212, 212, 212, 0.7);
-            width: 30%;
             border-radius: 5px;
             border: 2px solid white;
+            margin: 10px auto;
+            padding: 0 10px;
+            width: 70%;
+            @include med-screens {
+                width: 28%;
+                margin: 0;
+            }
         }
     }
    
