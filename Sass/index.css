@@ -745,7 +745,6 @@ main .project-container {
     bottom: 0;
     left: 0;
     background-image: url(../images/sand-lg.jpg);
-    background-size: cover;
     background-color: lightgray;
   }
 }
