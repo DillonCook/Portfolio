@@ -735,7 +735,6 @@ main .project-container {
   position: relative;
   background-image: url(../images/sand-lg.jpg);
   background-attachment: fixed;
-  background-size: center;
   background-color: lightgray;
   background-repeat: no-repeat;
 }
