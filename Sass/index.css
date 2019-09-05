@@ -733,10 +733,31 @@ main .project-container {
   background-position-y: 100%;
   padding-bottom: 50px;
   position: relative;
-  background-image: url(../images/sand-lg.jpg);
-  background-attachment: fixed;
-  background-color: lightgray;
-  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  main .project-container::before {
+    content: "";
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: -15%;
+    left: 0;
+    background-image: url(../images/sand-lg.jpg);
+    background-size: cover;
+    background-color: lightgray;
+  }
+}
+
+@media (min-width: 768px) {
+  main .project-container {
+    background-image: url(../images/sand-lg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: lightgray;
+    background-repeat: no-repeat;
+  }
 }
 
 main h1 {
