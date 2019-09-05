@@ -33,3 +33,8 @@
         @content;
     }
 }
+ @mixin sm-screens-only {
+     @media (max-width: 767px) {
+         @content;
+     }
+ }
