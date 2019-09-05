@@ -169,28 +169,28 @@ main {
         background-position-y: 100%;
         padding-bottom: 50px;
         position: relative;
-        &::before {
-            @include sm-screens-only {
-                content: "";
-                z-index: -1;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                height: 100%;
-                background-image: url(../images/sand-lg.jpg);
-                background-size: cover;
-                background-color: lightgray;
-            }
-        }
-        @include med-screens {
+        // &::before {
+        //     @include sm-screens-only {
+        //         content: "";
+        //         z-index: -1;
+        //         position: fixed;
+        //         top: 0;
+        //         right: 0;
+        //         bottom: 0;
+        //         left: 0;
+                
+        //         background-image: url(../images/sand-lg.jpg);
+        //         background-size: cover;
+        //         background-color: lightgray;
+        //     }
+        // }
+        // @include med-screens {
             background-image: url(../images/sand-lg.jpg);
             background-attachment: fixed;
-            background-size: cover;
+            background-size: center;
             background-color: lightgray;
             background-repeat: no-repeat;
-        }
+        // }
     }
 
     h1 {
