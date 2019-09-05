@@ -168,7 +168,9 @@ main {
     .project-container {
         background-image: url(../images/sand-lg.jpg);
         background-attachment: fixed;
-        background-size: cover;
+        @include med-screens {
+            background-size: cover;     // testing mobile solution to background attachment-fixed
+        }
         background-color: lightgray;
         background-repeat: no-repeat;
         background-position-y: 100%;

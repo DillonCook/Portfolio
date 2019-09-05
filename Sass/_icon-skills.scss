@@ -44,9 +44,13 @@
         opacity: 0;
         transition: opacity .5s ease;
         right: 50%;
-        width: 500px;
-        margin-right: -250px;
+        width: 300px;
+        margin-right: -150px;
         margin-top: 10px;
+        @include med-screens {
+            width: 500px;
+        margin-right: -250px;
+        }
         p {
             color: $dark-blue;
             text-shadow: 0 1px 2px black;
