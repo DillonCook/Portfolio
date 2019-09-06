@@ -3,18 +3,16 @@
 const imageContainers = document.querySelectorAll('.image-container');
 const thumbnails = document.querySelectorAll('.thumbnail');
 const overlays = document.querySelectorAll('.overlay');
+let button = document.createElement('div');
 
 imageContainers.forEach((image) => {
   image.addEventListener('mouseenter', () => {
     image.firstElementChild.style.transform = "scale(1.3)";
-    image.lastElementChild.lastElementChild.style.opacity = "1";
-    if (image.parentNode.lastElementChild.lastElementChild.textContent == "View More") {
-      image.parentNode.lastElementChild.lastElementChild.textContent = "Hide";      
-    }
+    image.lastElementChild.style.opacity = "1";
   });
   image.addEventListener('mouseleave', () => {
     image.firstElementChild.style.transform = "scale(1)";
-    image.lastElementChild.lastElementChild.style.opacity = "0";
+    image.lastElementChild.style.opacity = "0";
     if (image.parentNode.lastElementChild.lastElementChild.textContent == "Hide") {
       image.parentNode.lastElementChild.lastElementChild.textContent = "View More";      
     }
@@ -41,14 +39,19 @@ icons.forEach((icon) => {
       
     if (icon.classList[0] == "devicon-html5-plain") {
       modalText.textContent = "HTML5";
+      // modal.style.backgroundColor = "rgba(240, 100, 20, .8)";
     } else if (icon.classList[0] == "devicon-css3-plain") {
       modalText.textContent = "CSS3";
+      // modal.style.backgroundColor = "rgba(0, 82, 206, .8)";
     } else if (icon.classList[0] == "devicon-javascript-plain") {
       modalText.textContent = "Pure JavaScript";
+      // modal.style.backgroundColor = "rgba(214, 195, 19, .8)";
     } else if (icon.classList[0] == "devicon-jquery-plain") {
       modalText.textContent = "jQuery & plugins";
+      // modal.style.backgroundColor = "rgba(138, 225, 252, .8)";
     } else if (icon.classList[0] == "devicon-sass-original") {
       modalText.textContent = "Sass";
+      // modal.style.backgroundColor = "rgba(253, 101, 164, .8)";
     } else if (icon.classList[0] == "devicon-git-plain") {
       modalText.textContent = "Git";
     }
@@ -82,6 +85,12 @@ $('#nav-home').click(() => {
 $('#about-me').click(() => {
   $('html, body').animate({
       scrollTop: $('#about-me').offset().top
+  }, 500);
+});
+
+$('#projects').click(() => {
+  $('html, body').animate({
+      scrollTop: $('#projects').offset().top
   }, 500);
 });
 
@@ -157,12 +166,12 @@ views.forEach((view) => {
   view.addEventListener('click', () => {
     if (view.textContent == "View More") {
       view.parentNode.parentNode.firstElementChild.firstElementChild.style.transform = "scale(1.3)";
-      view.parentNode.parentNode.firstElementChild.lastElementChild.lastElementChild.style.opacity = "1";
+      view.parentNode.parentNode.firstElementChild.lastElementChild.style.opacity = "1";
       view.textContent = 'Hide';
   
     } else {
       view.parentNode.parentNode.firstElementChild.firstElementChild.style.transform = "scale(1)";
-      view.parentNode.parentNode.firstElementChild.lastElementChild.lastElementChild.style.opacity = "0";
+      view.parentNode.parentNode.firstElementChild.lastElementChild.style.opacity = "0";
       view.textContent = "View More";
     }
   });

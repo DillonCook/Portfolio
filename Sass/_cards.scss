@@ -10,6 +10,10 @@
     }
     @include lg-screens {
         grid-template-columns: auto auto auto;
+        grid-gap: 15px;
+    }
+    a {
+        text-decoration: none;
     }
     .card { // each project's front
         position: relative;
@@ -72,7 +76,6 @@
             border-bottom: 2px solid white;
             .thumbnail { // underlying image
                 position: relative;
-                margin-bottom: -8px;
                 width: 100%;
                 height: 100%;
                 transition: filter .4s ease, transform .4s ease;
@@ -84,18 +87,42 @@
                 left: 0;
                 bottom: 0;
                 right: 0;              
-                color: white;
+                
                 background-color: rgba(0, 0, 0, 0.75);
                 transition: all .5s ease;
                 z-index: 10;
-                font-size: 1.5rem;
-                padding: 7% 3%;
+                font-size: 1.2rem;
+                
                 p {
+                    box-sizing: border-box;
+                    color: white;
                     width: 100%;
                     height: 100%;
                     text-align: center;
                     margin: 0;
                     line-height: 1;
+                    padding: 7% 3%;
+                }
+                .view-code-button {
+                    position: absolute;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    
+                    border: none;
+                    right: 25%;
+                    bottom: 3%;
+                    left: 25%;
+                    margin: auto;
+                    border-radius: 50px;
+                    transition: background-color .3s ease;
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.85);
+                        cursor: pointer;
+                    }
+                    p {
+                        padding: 4px 0;
+                        align-content: center;
+                        color: rgba(0, 0, 0, 0.75);
+                    }
                 }
             }
         }
@@ -103,8 +130,7 @@
             margin: auto 0;
         }
         .icon { // individual icons 
-            color: rgba(0, 0, 0, .75);
-            text-shadow: 0 0 2px white;
+            text-shadow: 0 1px 1px white;
             font-size: 2em;
             padding: 1px;
             &:hover {

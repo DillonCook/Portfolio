@@ -702,9 +702,13 @@ html {
 }
 
 .about-section .container p {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: auto;
   width: 90%;
-  padding: 20px 0;
+  padding: 20px 0 20px 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 }
 
 @media (min-width: 768px) {
@@ -717,7 +721,8 @@ html {
   width: 90%;
   height: 100%;
   margin: auto;
-  border-radius: 5px;
+  padding: 10px 10px;
+  border-radius: 20px;
 }
 
 @media (min-width: 768px) {
@@ -768,6 +773,7 @@ main h1 {
   text-align: center;
   text-shadow: 0 2px 5px black;
   background-color: rgba(212, 212, 212, 0.5);
+  cursor: pointer;
 }
 
 main #image-attribution {
@@ -783,6 +789,19 @@ main #image-attribution {
 
 main #image-attribution:hover {
   font-size: 1em;
+}
+
+main .coming-soon-skills {
+  text-align: center;
+  font-size: 1.5em;
+  color: white;
+  text-shadow: 0 1px 2px black;
+  margin-top: 100px;
+}
+
+main .coming-soon-skills .skill {
+  font-size: 2em;
+  color: black;
 }
 
 footer {
@@ -846,10 +865,14 @@ footer h3 {
   font-size: 1.4em;
 }
 
-footer h3, footer h4 {
+footer h3, footer h4, footer a {
   color: white;
   text-shadow: 0 1px 2px black;
   margin: 12px 0;
+}
+
+footer a {
+  text-decoration: none;
 }
 
 footer svg {
@@ -894,7 +917,12 @@ footer .linkedin {
   .main-container {
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
+    grid-gap: 15px;
   }
+}
+
+.main-container a {
+  text-decoration: none;
 }
 
 .main-container .card {
@@ -981,7 +1009,6 @@ footer .linkedin {
 
 .main-container .card .image-container .thumbnail {
   position: relative;
-  margin-bottom: -8px;
   width: 100%;
   height: 100%;
   -webkit-transition: -webkit-filter .4s ease, -webkit-transform .4s ease;
@@ -997,21 +1024,48 @@ footer .linkedin {
   left: 0;
   bottom: 0;
   right: 0;
-  color: white;
   background-color: rgba(0, 0, 0, 0.75);
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
   z-index: 10;
-  font-size: 1.5rem;
-  padding: 7% 3%;
+  font-size: 1.2rem;
 }
 
 .main-container .card .image-container .overlay p {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
   width: 100%;
   height: 100%;
   text-align: center;
   margin: 0;
   line-height: 1;
+  padding: 7% 3%;
+}
+
+.main-container .card .image-container .overlay .view-code-button {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  right: 25%;
+  bottom: 3%;
+  left: 25%;
+  margin: auto;
+  border-radius: 50px;
+  -webkit-transition: background-color .3s ease;
+  transition: background-color .3s ease;
+}
+
+.main-container .card .image-container .overlay .view-code-button:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+}
+
+.main-container .card .image-container .overlay .view-code-button p {
+  padding: 4px 0;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  color: rgba(0, 0, 0, 0.75);
 }
 
 .main-container .card .icon-div {
@@ -1019,14 +1073,37 @@ footer .linkedin {
 }
 
 .main-container .card .icon {
-  color: rgba(0, 0, 0, 0.75);
-  text-shadow: 0 0 2px white;
+  text-shadow: 0 1px 1px white;
   font-size: 2em;
   padding: 1px;
 }
 
 .main-container .card .icon:hover {
   color: black;
+}
+
+.devicon-html5-plain {
+  color: rgba(240, 100, 20, 0.75);
+}
+
+.devicon-css3-plain {
+  color: rgba(0, 82, 206, 0.75);
+}
+
+.devicon-javascript-plain {
+  color: rgba(214, 195, 19, 0.7);
+}
+
+.devicon-jquery-plain {
+  color: rgba(138, 225, 252, 0.8);
+}
+
+.devicon-sass-original {
+  color: rgba(253, 101, 164, 0.7);
+}
+
+.devicon-git-plain {
+  color: rgba(206, 57, 12, 0.7);
 }
 
 .icon-container {
@@ -1065,8 +1142,8 @@ footer .linkedin {
 .icon-container .icon {
   font-size: 2em;
   padding: 0 5px;
-  color: rgba(59, 167, 255, 0.8);
-  text-shadow: 0 1px 2px black;
+  color: #0874CC;
+  text-shadow: 0 1px 1px black;
 }
 
 .icon-container .icon:hover {
@@ -1115,7 +1192,7 @@ footer .linkedin {
   color: #0874CC;
   text-shadow: 0 1px 2px black;
   font-weight: 600;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0) !important;
   font-size: 1.5rem;
   border-radius: 10px;
   padding: 5px;

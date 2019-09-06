@@ -3,6 +3,12 @@ $blue: rgba(59, 167, 255, 0.8);
 $dark-blue: #0874CC;
 $darker-blue: ($dark-blue / 2%);
 $primary-font: 'Raleway', sans-serif;
+$html-color: rgba(240, 100, 20, .75);
+$css-color: rgba(0, 82, 206, .75);
+$js-color: rgba(214, 195, 19, .7);
+$jQ-color: rgba(138, 225, 252, .8);
+$sass-color: rgba(253, 101, 164, .7);
+$git-color: rgba(206, 57, 12, .7);
 
 @keyframes dancing {
     0% {
