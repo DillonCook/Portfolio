@@ -506,7 +506,7 @@ html {
 }
 
 #home {
-  background-image: url(../images/header-image-med.jpg);
+  background-image: url(../images/header-image-lg_6_768x.jpg);
   background-color: gray;
   position: relative;
   text-align: center;
@@ -517,6 +517,12 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+@media (min-width: 768px) {
+  #home {
+    background-image: url(../images/header-image-lg_5_1024x.jpg);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -750,7 +756,7 @@ main .project-container {
     right: 0;
     bottom: -15%;
     left: 0;
-    background-image: url(../images/sand-lg.jpg);
+    background-image: url(../images/sand-lg_768x.jpg);
     background-size: cover;
     background-color: lightgray;
   }
@@ -758,11 +764,17 @@ main .project-container {
 
 @media (min-width: 768px) {
   main .project-container {
-    background-image: url(../images/sand-lg.jpg);
+    background-image: url(../images/sand-lg_1_1024x.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-color: lightgray;
     background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 1024px) {
+  main .project-container {
+    background-image: url(../images/sand-lg.jpg);
   }
 }
 
