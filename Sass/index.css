@@ -506,7 +506,7 @@ html {
 }
 
 #home {
-  background-image: url(../images/header-image-lg_6_768x.jpg);
+  background-image: url(../images/header-image-lg_5_1024x.jpg);
   background-color: gray;
   position: relative;
   text-align: center;
@@ -521,7 +521,7 @@ html {
 
 @media (min-width: 768px) {
   #home {
-    background-image: url(../images/header-image-lg_5_1024x.jpg);
+    background-image: url(../images/header-bg-med.jpg);
   }
 }
 
@@ -786,6 +786,13 @@ main h1 {
   text-align: center;
   text-shadow: 0 2px 5px black;
   background-color: rgba(212, 212, 212, 0.5);
+  -webkit-transition: color .3s ease, background-color .3s ease;
+  transition: color .3s ease, background-color .3s ease;
+}
+
+main h1:hover {
+  color: #e6e6e6;
+  background-color: rgba(187, 187, 187, 0.5);
   cursor: pointer;
 }
 
@@ -1238,6 +1245,7 @@ footer .linkedin {
   text-align: center;
   height: 100vh;
   background-image: url(../images/sand-lg.jpg);
+  background-repeat: no-repeat;
 }
 
 #resume-main h2 {

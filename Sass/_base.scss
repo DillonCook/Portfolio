@@ -9,7 +9,7 @@ html {
 }
 // ---------------- HEADER SECTION -----------------------
 #home {
-    background-image: url(../images/header-image-lg_6_768x.jpg);
+    background-image: url(../images/header-image-lg_5_1024x.jpg);
     background-color: gray;
     position: relative;
     text-align: center;
@@ -21,7 +21,7 @@ html {
     background-size: cover;
     background-position: center;
     @include med-screens {
-        background-image: url(../images/header-image-lg_5_1024x.jpg);
+        background-image: url(../images/header-bg-med.jpg);
     }
     @include lg-screens {
         background-image: url(../images/header-image-lg.jpg);
@@ -210,7 +210,12 @@ main {
         text-align: center;
         text-shadow: 0 2px 5px black;
         background-color: rgba(212, 212, 212, 0.5);
-        cursor: pointer;
+        transition: color .3s ease, background-color .3s ease;
+        &:hover {
+            color: darken($color: white, $amount: 10%);
+            background-color: darken($color: rgba(212, 212, 212, 0.5), $amount: 10%);
+            cursor: pointer;
+        }
     }
     
     #image-attribution {
