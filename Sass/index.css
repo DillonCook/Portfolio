@@ -519,12 +519,6 @@ html {
   background-position: center;
 }
 
-@media (min-width: 768px) {
-  #home {
-    background-image: url(../images/header-bg-med.jpg);
-  }
-}
-
 @media (min-width: 1024px) {
   #home {
     background-image: url(../images/header-image-lg.jpg);
@@ -1246,6 +1240,7 @@ footer .linkedin {
   height: 100vh;
   background-image: url(../images/sand-lg.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #resume-main h2 {

@@ -20,9 +20,9 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    @include med-screens {
-        background-image: url(../images/header-bg-med.jpg);
-    }
+    // @include med-screens {
+    //     background-image: url(../images/header-bg-med.jpg);
+    // }
     @include lg-screens {
         background-image: url(../images/header-image-lg.jpg);
     }
