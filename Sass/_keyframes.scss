@@ -31,9 +31,18 @@
         transform: translateY(150px);
     }
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
+
+@keyframes title-entrance {
+    0% {
+        transform: translateY(150px);
+    }
+    100% {
+    }
+}
+
 
 @keyframes exit {
     0% {

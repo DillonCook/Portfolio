@@ -4,21 +4,52 @@ const imageContainers = document.querySelectorAll('.image-container');
 const thumbnails = document.querySelectorAll('.thumbnail');
 const overlays = document.querySelectorAll('.overlay');
 let button = document.createElement('div');
+const projectName = document.querySelector('.card h5');
+
+
 
 imageContainers.forEach((image) => {
   image.addEventListener('mouseenter', () => {
     image.firstElementChild.style.transform = "scale(1.3)";
     image.lastElementChild.style.opacity = "1";
+    image.firstElementChild.nextElementSibling.style.opacity = '0'; // targets h5 element
+    if (image.parentNode.lastElementChild.lastElementChild.textContent === "Details") {
+      image.parentNode.lastElementChild.lastElementChild.textContent = "Hide";      
+    }
   });
   image.addEventListener('mouseleave', () => {
     image.firstElementChild.style.transform = "scale(1)";
-    image.lastElementChild.style.opacity = "0";
-    if (image.parentNode.lastElementChild.lastElementChild.textContent == "Hide") {
-      image.parentNode.lastElementChild.lastElementChild.textContent = "View More";      
+    image.lastElementChild.style.opacity = "0"; 
+    image.firstElementChild.nextElementSibling.style.opacity = '1'; // targets h5 element
+    if (image.parentNode.lastElementChild.lastElementChild.textContent === "Hide") {
+      image.parentNode.lastElementChild.lastElementChild.textContent = "Details";      
     }
   });
 });
 
+
+// ==================  "View More" Button on project cards ===========================
+const views = document.querySelectorAll('.view-more');
+const over = document.querySelector('.overlay')
+const thumb = document.querySelector('.thumbnail')
+
+views.forEach((view) => {
+  view.addEventListener('click', () => {
+    if (view.textContent === "Details") {
+      view.parentNode.parentNode.firstElementChild.firstElementChild.style.transform = "scale(1.3)"; // targets image
+      view.parentNode.parentNode.firstElementChild.lastElementChild.style.opacity = "1"; // targets overlay
+      view.textContent = 'Hide'; // change text
+      view.parentNode.parentNode.firstElementChild.firstElementChild.nextElementSibling.style.opacity = "0"; // targets h5 element
+
+    } else {
+      view.parentNode.parentNode.firstElementChild.firstElementChild.style.transform = "scale(1)"; // targets image
+      view.parentNode.parentNode.firstElementChild.lastElementChild.style.opacity = "0"; // targets overlay
+      view.textContent = "Details"; // change text
+      view.parentNode.parentNode.firstElementChild.firstElementChild.nextElementSibling.style.opacity = "1"; // targets h5 element
+
+    }
+  });
+})
 
 // Icons
 const icons = document.querySelectorAll('.icon');
@@ -59,7 +90,6 @@ icons.forEach((icon) => {
   // mouse leaves - info dies
   icon.addEventListener('mouseleave', () => {
     modal.style.opacity = "0";
-      // setTimeout(() => icon.parentNode.removeChild(modal), 5000); 
   });
 });
 
@@ -107,7 +137,7 @@ const typeWriter = function (txtElement, words, wait = 2500) {
   this.isDeleting = false;
 }
 
-//================= Type function =============== learned and modified from Traversy Media
+//================= Type function =============== learned and modified from Traversy Media tutorial
   typeWriter.prototype.type = function() {
     // Create index of word
     const current = this.wordIndex % this.words.length;
@@ -157,25 +187,6 @@ function init(){
 
 
 
-// ==================  "View More" Button on project cards ===========================
-const views = document.querySelectorAll('.view-more');
-const over = document.querySelector('.overlay')
-const thumb = document.querySelector('.thumbnail')
-
-views.forEach((view) => {
-  view.addEventListener('click', () => {
-    if (view.textContent == "View More") {
-      view.parentNode.parentNode.firstElementChild.firstElementChild.style.transform = "scale(1.3)";
-      view.parentNode.parentNode.firstElementChild.lastElementChild.style.opacity = "1";
-      view.textContent = 'Hide';
-  
-    } else {
-      view.parentNode.parentNode.firstElementChild.firstElementChild.style.transform = "scale(1)";
-      view.parentNode.parentNode.firstElementChild.lastElementChild.style.opacity = "0";
-      view.textContent = "View More";
-    }
-  });
-})
 
 
 

@@ -5,7 +5,6 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Raleway:200,400,600&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -416,8 +415,8 @@ template {
             transform: translateY(150px);
   }
   100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -427,8 +426,26 @@ template {
             transform: translateY(150px);
   }
   100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes title-entrance {
+  0% {
+    -webkit-transform: translateY(150px);
+            transform: translateY(150px);
+  }
+  100% {
+  }
+}
+
+@keyframes title-entrance {
+  0% {
+    -webkit-transform: translateY(150px);
+            transform: translateY(150px);
+  }
+  100% {
   }
 }
 
@@ -506,7 +523,7 @@ html {
 }
 
 #home {
-  background-image: url(../images/header-image-lg_5_1024x.jpg);
+  background-image: url(../images/header-image-lg.jpg);
   background-color: gray;
   position: relative;
   text-align: center;
@@ -521,7 +538,7 @@ html {
 
 @media (min-width: 1024px) {
   #home {
-    background-image: url(../images/header-image-lg.jpg);
+    background-image: url(../images/header-image-origin.jpg);
   }
 }
 
@@ -919,6 +936,7 @@ footer .linkedin {
   grid-gap: 25px;
   margin: 0 auto;
   position: relative;
+  max-width: 1200px;
 }
 
 @media (min-width: 375px) {
@@ -929,9 +947,7 @@ footer .linkedin {
 
 @media (min-width: 1024px) {
   .main-container {
-    -ms-grid-columns: auto auto auto;
-        grid-template-columns: auto auto auto;
-    grid-gap: 15px;
+    grid-gap: 25px;
   }
 }
 
@@ -960,6 +976,23 @@ footer .linkedin {
   height: 100%;
 }
 
+.main-container .card h5 {
+  opacity: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 1.5em;
+  font-weight: 200;
+  color: #1f1f1f;
+  text-align: center;
+  -webkit-transition: opacity .4s ease;
+  transition: opacity .4s ease;
+  background-color: white;
+  margin: auto;
+  padding-top: 2px;
+}
+
 .main-container .card .info-row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -973,8 +1006,6 @@ footer .linkedin {
 }
 
 .main-container .card .info-row .view-more {
-  -webkit-animation: dancing 12s infinite;
-          animation: dancing 12s infinite;
   margin: auto 0;
   color: white;
   font-weight: 600;
@@ -1015,10 +1046,11 @@ footer .linkedin {
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 4px;
-  -webkit-box-shadow: 0 3px 5px -1px black;
-          box-shadow: 0 3px 5px -1px black;
-  width: 100%;
+  -webkit-box-shadow: 0 3px 5px -2px black;
+          box-shadow: 0 3px 5px -2px black;
   border-bottom: 2px solid white;
+  width: 100%;
+  height: 100%;
 }
 
 .main-container .card .image-container .thumbnail {
