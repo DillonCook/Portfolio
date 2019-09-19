@@ -185,6 +185,24 @@ function init(){
 }
 //================================== TypeWriter Finish ======================================
 
+//================================== Parallax Header - Name and TypeWriter ======================================
+$(window).scroll(() => {
+  let verticalScroll = $(this).scrollTop();
+  
+  $('.txt-type').css({
+    'transform': 'translate(0px, ' + verticalScroll / .5 +'%)'
+  });
+
+});
+
+$(window).scroll(() => {
+  let verticalScroll = $(this).scrollTop();
+  
+  $('.name').css({
+    'transform': 'translate(0px, ' + verticalScroll / 4.5 +'%)'
+  });
+
+});
 
 
 

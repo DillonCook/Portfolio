@@ -414,6 +414,10 @@ template {
     -webkit-transform: translateY(150px);
             transform: translateY(150px);
   }
+  70% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
   100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -424,6 +428,10 @@ template {
   0% {
     -webkit-transform: translateY(150px);
             transform: translateY(150px);
+  }
+  70% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -534,6 +542,7 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 
 @media (min-width: 1024px) {
@@ -988,7 +997,7 @@ footer .linkedin {
   text-align: center;
   -webkit-transition: opacity .4s ease;
   transition: opacity .4s ease;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.75);
   margin: auto;
   padding-top: 2px;
 }
