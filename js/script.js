@@ -14,7 +14,9 @@ imageContainers.forEach((image) => {
     image.lastElementChild.style.opacity = "1";
     image.firstElementChild.nextElementSibling.style.opacity = '0'; // targets h5 element
     if (image.parentNode.lastElementChild.lastElementChild.textContent === "Details") {
-      image.parentNode.lastElementChild.lastElementChild.textContent = "Hide";      
+      image.parentNode.lastElementChild.lastElementChild.textContent = "Hide";     
+      image.lastElementChild.lastElementChild.style.right = '25%'; 
+      image.lastElementChild.lastElementChild.style.left = '25%'; 
     }
   });
   image.addEventListener('mouseleave', () => {
@@ -22,31 +24,36 @@ imageContainers.forEach((image) => {
     image.lastElementChild.style.opacity = "0"; 
     image.firstElementChild.nextElementSibling.style.opacity = '1'; // targets h5 element
     if (image.parentNode.lastElementChild.lastElementChild.textContent === "Hide") {
-      image.parentNode.lastElementChild.lastElementChild.textContent = "Details";      
+      image.parentNode.lastElementChild.lastElementChild.textContent = "Details";         
+      image.lastElementChild.lastElementChild.style.right = '100%'; 
+      image.lastElementChild.lastElementChild.style.left = '-100%';       
     }
   });
 });
 
 
 // ==================  "View More" Button on project cards ===========================
-const views = document.querySelectorAll('.view-more');
+const details = document.querySelectorAll('.view-more');
 const over = document.querySelector('.overlay')
 const thumb = document.querySelector('.thumbnail')
 
-views.forEach((view) => {
+details.forEach((view) => {
   view.addEventListener('click', () => {
     if (view.textContent === "Details") {
       view.parentNode.parentNode.firstElementChild.firstElementChild.style.transform = "scale(1.3)"; // targets image
       view.parentNode.parentNode.firstElementChild.lastElementChild.style.opacity = "1"; // targets overlay
       view.textContent = 'Hide'; // change text
-      view.parentNode.parentNode.firstElementChild.firstElementChild.nextElementSibling.style.opacity = "0"; // targets h5 element
+      view.parentNode.parentNode.firstElementChild.firstElementChild.nextElementSibling.style.opacity = "0"; // targets h5 element to remove project name
+      view.parentNode.parentNode.firstElementChild.lastElementChild.lastElementChild.style.right = '25%';
+      view.parentNode.parentNode.firstElementChild.lastElementChild.lastElementChild.style.left = '25%';
 
     } else {
       view.parentNode.parentNode.firstElementChild.firstElementChild.style.transform = "scale(1)"; // targets image
       view.parentNode.parentNode.firstElementChild.lastElementChild.style.opacity = "0"; // targets overlay
       view.textContent = "Details"; // change text
       view.parentNode.parentNode.firstElementChild.firstElementChild.nextElementSibling.style.opacity = "1"; // targets h5 element
-
+      view.parentNode.parentNode.firstElementChild.lastElementChild.lastElementChild.style.right = '100%';
+      view.parentNode.parentNode.firstElementChild.lastElementChild.lastElementChild.style.left = '-100%';
     }
   });
 })
@@ -185,14 +192,20 @@ function init(){
 }
 //================================== TypeWriter Finish ======================================
 
-//================================== Parallax Header - Name and TypeWriter ======================================
+//================================== Parallax Header -- Name and TypeWriter ======================================
 $(window).scroll(() => {
   let verticalScroll = $(this).scrollTop();
-  
-  $('.txt-type').css({
-    'transform': 'translate(0px, ' + verticalScroll / .5 +'%)'
-  });
 
+  $('.txt-type').css({
+    'transform': 'translate(0px, ' + verticalScroll / .75 +'%)',
+    'opacity': 1 / (verticalScroll * .075),
+    
+  });
+  if (verticalScroll > 400) {    
+    $('.txt-type').css({
+      'opacity': '0'
+    });
+  }
 });
 
 $(window).scroll(() => {

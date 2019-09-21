@@ -10,7 +10,11 @@ nav {
     top: 0;
     margin-top: 0;
     @media (min-width: 551px) {
-        background-color: rgba(0, 0, 0, 0.65);
+        a {
+            background-color: rgba(0, 0, 0, 0.35);
+            border-radius: 50px;
+            margin-top: 10px;
+        }
     }
 }
 
@@ -49,18 +53,19 @@ nav {
             }
             a {                
                 text-shadow: 0 2px 3px black;
+                margin-right: 5px;
             }
             a:nth-child(1){
-                animation: dancing 6s ease 1s infinite, entrance 1s ease 1;
+                animation: dancing 6s ease 1s 2, entrance 1s ease 1;
             }
             a:nth-child(2){
-                animation: dancing 6s ease 1.5s infinite, entrance 1.2s ease 1;
+                animation: dancing 6s ease 1.5s 2, entrance 1.2s ease 1;
             }
             a:nth-child(3){
-                animation: dancing 6s ease 2s infinite, entrance 1.4s ease 1;
+                animation: dancing 6s ease 2s 2, entrance 1.4s ease 1;
             }
             a:nth-child(4){
-                animation: dancing 6s ease 2.5s infinite, entrance 1.6s ease 1;
+                animation: dancing 6s ease 2.5s 2, entrance 1.6s ease 1;
             }
             
             
