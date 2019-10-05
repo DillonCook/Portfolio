@@ -218,15 +218,16 @@ $(window).scroll(() => {
 });
 
 // ================================== Sticky top nav on scroll =================================
-window.onscroll = function() {
+window.onscroll = () => {
   stickyNav()
 };
 
 var navbar = document.querySelector("nav");
 var sticky = navbar.offsetTop;
 
+
 function stickyNav() {
-  if (window.pageYOffset >= sticky) {
+  if (window.pageYOffset !== sticky) {
     navbar.classList.add("sticky");
   } else {
     navbar.classList.remove("sticky");

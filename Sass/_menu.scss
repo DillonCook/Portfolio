@@ -1,22 +1,10 @@
-//--------------------------------- responsive CSS only menu --------------------------------------
 //Base Styles Responsive Menu
 nav {
     margin: 0 auto;
-    position: absolute; // testing functionality to position drop-down over other elements
+    position: absolute; 
     z-index: 15;
 }
-.sticky {
-    position: fixed;
-    top: 0;
-    margin-top: 0;
-    @media (min-width: 551px) {
-        a {
-            background-color: rgba(0, 0, 0, 0.35);
-            border-radius: 50px;
-            margin-top: 10px;
-        }
-    }
-}
+
 
 .nav a {
     text-decoration: none;
@@ -24,13 +12,11 @@ nav {
     font-size: 1.5em;
     font-weight: 600;
     padding: 10px 15px;
-    transition: color .4s ease;
+    transition: color .4s ease, background-color .4s ease;
     color: white;
     cursor: pointer;
-    &:hover {
-        color: $dark-blue;
-    }
 }
+
 @media (min-width: 551px) {
     nav {
         margin-top: 5px;
@@ -52,7 +38,7 @@ nav {
                 margin-right: auto;
             }
             a {                
-                text-shadow: 0 2px 3px black;
+                text-shadow: 0 2px 2px rgb(0, 0, 0);
                 margin-right: 5px;
             }
             a:nth-child(1){
@@ -88,7 +74,8 @@ nav {
             background-color: rgba(0, 0, 0, 0.75);
             visibility: hidden;
             height: 0;
-            transition: all .5s ease;
+            overflow: hidden;
+            transition: all .4s ease;
             
             a {
                 text-decoration: none;
@@ -97,7 +84,7 @@ nav {
             }
             
             & + .toggle > #bars {
-                transition: transform .5s ease;
+                transition: all .4s ease;
                 transform: rotate(0deg);
             }
         }
@@ -109,7 +96,8 @@ nav {
             background-color: rgba(0, 0, 0, 0.75);
             visibility: visible;
             height: 200px;
-            transition: height .5s ease, visibility .5s ease;
+            overflow: hidden;
+            transition: all .4s ease;
             a {
                 text-decoration: none;
                 font-size: 1.5em;
@@ -118,11 +106,12 @@ nav {
             }
         
             & + .toggle > #bars {
-                transition: transform .5s ease;
+                transition: all .4s ease;
                 transform: rotate(90deg);
             }
         }
         .toggle {
+            margin: auto;
             margin-top: 0;
             clear: both;
             display: block;
@@ -133,7 +122,7 @@ nav {
             padding: 10px 0;
             height: 40px;
             font-size: 1.5em;
-            transition: background-color .4s ease;
+            transition: all .4s ease;
             color: $dark-blue;
             background-color: rgba(0, 0, 0, 0.9);
             #bars {
@@ -141,6 +130,35 @@ nav {
                 margin: 0 auto;
                 color: $dark-blue;
             }   
+        }
+    }
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    margin-top: 0;
+    @media (max-width: 550px) {
+        .toggle {
+            width: 60px;
+            height: 10px;
+            border-radius: 0 0 5px 5px;
+            margin: 0 auto;
+            #bars {
+                font-size: .75em;
+                margin-top: -15px;
+            }
+        }
+    }
+    
+    @media (min-width: 551px) {
+        a {
+            background-color: rgba(0, 0, 0, 0.35);
+            border-radius: 50px;
+            margin-top: 10px;
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.5);            
+            }
         }
     }
 }

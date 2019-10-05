@@ -3,7 +3,7 @@
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
     grid-template-rows: auto;
     grid-gap: 25px;
-    margin: 0 auto;
+    margin: 100px auto 0;
     position: relative;
     max-width: 1200px;
     @include sm-screens {
@@ -35,13 +35,32 @@
             left: 0;
             right: 0;
             font-size: 1.5em;
-            font-weight: 200;
-            color: rgb(31, 31, 31);
+            font-weight: lighter;
+            color: rgb(238, 238, 238);
             text-align: center;
             transition: opacity .4s ease;
-            background-color: rgba(255, 255, 255, 0.75);
+            background-image: linear-gradient(
+                  to top,
+                  hsl(0, 0%, 30%) 0%,
+                  hsla(0, 0%, 30%, 0.987) 3.5%,
+                  hsla(0, 0%, 30%, 0.951) 8.4%,
+                  hsla(0, 0%, 30%, 0.896) 14.4%,
+                  hsla(0, 0%, 30%, 0.825) 21.4%,
+                  hsla(0, 0%, 30%, 0.741) 29%,
+                  hsla(0, 0%, 30%, 0.648) 37.2%,
+                  hsla(0, 0%, 30%, 0.55) 45.7%,
+                  hsla(0, 0%, 30%, 0.45) 54.3%,
+                  hsla(0, 0%, 30%, 0.352) 62.8%,
+                  hsla(0, 0%, 30%, 0.259) 71%,
+                  hsla(0, 0%, 30%, 0.175) 78.6%,
+                  hsla(0, 0%, 30%, 0.104) 85.6%,
+                  hsla(0, 0%, 30%, 0.049) 91.6%,
+                  hsla(0, 0%, 30%, 0.013) 96.5%,
+                  hsla(0, 0%, 30%, 0) 100%
+                );
             margin: auto;
-            padding-top: 2px;
+            padding-top: 15px;
+            padding-bottom: 5px;
         }
         
         .info-row { // holds row items under images

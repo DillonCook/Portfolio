@@ -943,7 +943,7 @@ footer .linkedin {
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   grid-gap: 25px;
-  margin: 0 auto;
+  margin: 100px auto 0;
   position: relative;
   max-width: 1200px;
 }
@@ -992,14 +992,16 @@ footer .linkedin {
   left: 0;
   right: 0;
   font-size: 1.5em;
-  font-weight: 200;
-  color: #1f1f1f;
+  font-weight: lighter;
+  color: #eeeeee;
   text-align: center;
   -webkit-transition: opacity .4s ease;
   transition: opacity .4s ease;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#4d4d4d), color-stop(3.5%, rgba(77, 77, 77, 0.987)), color-stop(8.4%, rgba(77, 77, 77, 0.951)), color-stop(14.4%, rgba(77, 77, 77, 0.896)), color-stop(21.4%, rgba(77, 77, 77, 0.825)), color-stop(29%, rgba(77, 77, 77, 0.741)), color-stop(37.2%, rgba(77, 77, 77, 0.648)), color-stop(45.7%, rgba(77, 77, 77, 0.55)), color-stop(54.3%, rgba(77, 77, 77, 0.45)), color-stop(62.8%, rgba(77, 77, 77, 0.352)), color-stop(71%, rgba(77, 77, 77, 0.259)), color-stop(78.6%, rgba(77, 77, 77, 0.175)), color-stop(85.6%, rgba(77, 77, 77, 0.104)), color-stop(91.6%, rgba(77, 77, 77, 0.049)), color-stop(96.5%, rgba(77, 77, 77, 0.013)), to(rgba(77, 77, 77, 0)));
+  background-image: linear-gradient(to top, #4d4d4d 0%, rgba(77, 77, 77, 0.987) 3.5%, rgba(77, 77, 77, 0.951) 8.4%, rgba(77, 77, 77, 0.896) 14.4%, rgba(77, 77, 77, 0.825) 21.4%, rgba(77, 77, 77, 0.741) 29%, rgba(77, 77, 77, 0.648) 37.2%, rgba(77, 77, 77, 0.55) 45.7%, rgba(77, 77, 77, 0.45) 54.3%, rgba(77, 77, 77, 0.352) 62.8%, rgba(77, 77, 77, 0.259) 71%, rgba(77, 77, 77, 0.175) 78.6%, rgba(77, 77, 77, 0.104) 85.6%, rgba(77, 77, 77, 0.049) 91.6%, rgba(77, 77, 77, 0.013) 96.5%, rgba(77, 77, 77, 0) 100%);
   margin: auto;
-  padding-top: 2px;
+  padding-top: 15px;
+  padding-bottom: 5px;
 }
 
 .main-container .card .info-row {
@@ -1303,20 +1305,6 @@ nav {
   z-index: 15;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  margin-top: 0;
-}
-
-@media (min-width: 551px) {
-  .sticky a {
-    background-color: rgba(0, 0, 0, 0.35);
-    border-radius: 50px;
-    margin-top: 10px;
-  }
-}
-
 .nav a {
   text-decoration: none;
   -ms-flex-line-pack: center;
@@ -1324,14 +1312,10 @@ nav {
   font-size: 1.5em;
   font-weight: 600;
   padding: 10px 15px;
-  -webkit-transition: color .4s ease;
-  transition: color .4s ease;
+  -webkit-transition: color .4s ease, background-color .4s ease;
+  transition: color .4s ease, background-color .4s ease;
   color: white;
   cursor: pointer;
-}
-
-.nav a:hover {
-  color: #0874CC;
 }
 
 @media (min-width: 551px) {
@@ -1370,7 +1354,7 @@ nav {
     margin-right: auto;
   }
   nav .nav a {
-    text-shadow: 0 2px 3px black;
+    text-shadow: 0 2px 2px black;
     margin-right: 5px;
   }
   nav .nav a:nth-child(1) {
@@ -1420,8 +1404,9 @@ nav {
     background-color: rgba(0, 0, 0, 0.75);
     visibility: hidden;
     height: 0;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
+    overflow: hidden;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
   }
   nav .menu-show a {
     text-decoration: none;
@@ -1430,10 +1415,8 @@ nav {
             animation: exit .5s ease-out 1;
   }
   nav .menu-show + .toggle > #bars {
-    -webkit-transition: -webkit-transform .5s ease;
-    transition: -webkit-transform .5s ease;
-    transition: transform .5s ease;
-    transition: transform .5s ease, -webkit-transform .5s ease;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
@@ -1450,8 +1433,9 @@ nav {
     background-color: rgba(0, 0, 0, 0.75);
     visibility: visible;
     height: 200px;
-    -webkit-transition: height .5s ease, visibility .5s ease;
-    transition: height .5s ease, visibility .5s ease;
+    overflow: hidden;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
   }
   nav .menu-hide a {
     text-decoration: none;
@@ -1460,14 +1444,13 @@ nav {
             animation: entrance .8s ease 1;
   }
   nav .menu-hide + .toggle > #bars {
-    -webkit-transition: -webkit-transform .5s ease;
-    transition: -webkit-transform .5s ease;
-    transition: transform .5s ease;
-    transition: transform .5s ease, -webkit-transform .5s ease;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
   }
   nav .toggle {
+    margin: auto;
     margin-top: 0;
     clear: both;
     display: block;
@@ -1478,8 +1461,8 @@ nav {
     padding: 10px 0;
     height: 40px;
     font-size: 1.5em;
-    -webkit-transition: background-color .4s ease;
-    transition: background-color .4s ease;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
     color: #0874CC;
     background-color: rgba(0, 0, 0, 0.9);
   }
@@ -1487,6 +1470,36 @@ nav {
     width: 30px;
     margin: 0 auto;
     color: #0874CC;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 550px) {
+  .sticky .toggle {
+    width: 60px;
+    height: 10px;
+    border-radius: 0 0 5px 5px;
+    margin: 0 auto;
+  }
+  .sticky .toggle #bars {
+    font-size: .75em;
+    margin-top: -15px;
+  }
+}
+
+@media (min-width: 551px) {
+  .sticky a {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 50px;
+    margin-top: 10px;
+  }
+  .sticky a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 /*# sourceMappingURL=index.css.map */

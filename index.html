@@ -17,6 +17,7 @@
     <title>Dillon Cook</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="Sass/slidein.css">
     <link rel="stylesheet" href="Sass/index.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
 </head>
@@ -32,11 +33,11 @@
             <div class="toggle"><div id="bars">☰</div></div>
         </nav>
         <h1 class="name">Dillon Cook</h1>
-        <h2 class="txt-type" data-wait="2500" data-words='["Developer", "Designer", "Creator", "Traveler", "Fitness Enthusiast"]'></h2>  
+        <h2 class="txt-type" data-wait="2500" data-words='["Fully Responsive", " UI/UX Designer", "Developer", "Creator"]'></h2>  
         <h1 id="about-me">Who I Am..</h1>          
     </header>
     <main>
-        <div class="about-section">         
+        <div class="about-section js-slidein">         
                 <h2>Hey there! My name is Dillon, and I'm a Front End Developer.</h2>
                 <div class="container">
                     <img src="images/webdesign-3411373_1920.jpg" alt="web design image with computer, keyboard, and phone">
@@ -54,12 +55,12 @@
         </div>
         
         <div class="project-container">
-            <h1 id="projects">Projects</h1>
+            <h1 id="projects" class="js-slidein">Projects</h1>
             <div class="main-container">
     
-                <div class="card">
+                <div class="card js-slidein">
                     <div class="image-container">
-                        <img class="thumbnail" src="images/HairSalonThumbnail.png" alt="local hair salon website thumbnail">
+                        <img class="thumbnail" src="images/HairSalonThumbnail.jpg" alt="local hair salon website thumbnail">
                         <h5>Hair Stylist Website</h5>
                         <div class="overlay">
                             <a href="https://hairbykatiecook.com/" target="_blank">
@@ -85,7 +86,7 @@
                 </div>
     
 
-                <div class="card">
+                <div class="card js-slidein">
                     <div class="image-container">
                         <img class="thumbnail" src="images/GameShowThumbnail.png" alt="game show website thumbnail">
                         <h5>Hangman Spinoff</h5>
@@ -112,7 +113,7 @@
                 </div>
     
 
-                <div class="card">
+                <div class="card js-slidein">
                     <div class="image-container">                    
                         <img class="thumbnail" src="images/WebAppDashboardThumbnail.png" alt="wep application dashboard thumbnail">
                         <h5>User App Dashboard</h5>
@@ -164,7 +165,7 @@
                     </div>
                 </div> -->
     
-                <div class="card">
+                <div class="card js-slidein">
                     <div class="image-container">                    
                         <img class="thumbnail" src="images/APIEmployeeDirectoryThumbnail.png" alt="Employee Directory thumbnail">
                         <h5>Employee Directory</h5>
@@ -191,7 +192,7 @@
                 </div>
     
 
-                <div class="card">
+                <div class="card js-slidein">
                     <div class="image-container">
                         <img class="thumbnail" src="images/GalleryThumbnail.png" alt="Image Gallery Thumbnail">
                         <h5>Interactive Gallery</h5>
@@ -220,7 +221,7 @@
             </div>
     
 
-            <div class="icon-container">
+            <div class="icon-container js-slidein">
                 <h3>Skillset</h3>
                 <i class="devicon-html5-plain icon"></i>
                 <i class="devicon-css3-plain icon"></i>
@@ -229,7 +230,7 @@
                 <i class="devicon-sass-original icon"></i>
                 <i class="devicon-git-plain icon"></i>
             </div>
-            <div class="coming-soon-skills">
+            <div class="coming-soon-skills js-slidein">
                 <h3>Coming Soon</h3>
                 <i class="devicon-php-plain skill"></i>
                 <i class="devicon-react-original skill"></i>
@@ -238,24 +239,24 @@
         </div>
     </main>
     
-    <footer>
+    <footer class="js-slidein">
         <h1 id="contact">Contact</h1>
         <h2>Why Work With Me?</h2>
         <div class="container">
-            <div class="card">
+            <div class="card js-slidein">
                 <h3>Passionate</h3>
                 <p>The greatest work is done by passionate individuals. Hire me to add to your team of passionate individuals.
                     I work synergistically with others and spend too much free time devoted to learning new design tricks, 
                     development techniques, and entirely new frameworks!
                 </p>
             </div>
-            <div class="card">
+            <div class="card js-slidein">
                 <h3>Adaptable</h3>
                 <p>An artist has many mediums to work with. I'm always excited to use the newest tools for production purposes. Adaptability goes far beyond the tools
                     we choose to use though. It's also about flexibility and communication with coworkers, bosses, and the general "team spirit" attitude.
                 </p>
             </div>
-            <div class="card">
+            <div class="card js-slidein">
                 <h3>Quick Learning</h3>
                 <blockquote>“I’M STILL LEARNING.” –MICHELANGELO</blockquote>
                 <p>We are all still learning. However, what sets me apart is my ability to intake new technologies (or techniques) 
@@ -303,6 +304,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
+    <script src="js/slideIn.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
