@@ -531,7 +531,7 @@ html {
 }
 
 #home {
-  background-image: url(../images/header-image-lg.jpg);
+  background-image: url(../images/header-image-lg.webp);
   background-color: gray;
   position: relative;
   text-align: center;
@@ -547,7 +547,7 @@ html {
 
 @media (min-width: 1024px) {
   #home {
-    background-image: url(../images/header-image-origin.jpg);
+    background-image: url(../images/header-image-origin.webp);
   }
 }
 
@@ -1062,7 +1062,9 @@ footer .linkedin {
           box-shadow: 0 3px 5px -2px black;
   border-bottom: 2px solid white;
   width: 100%;
+  max-width: 600px;
   height: 100%;
+  max-height: 289px;
 }
 
 .main-container .card .image-container .thumbnail {

@@ -9,7 +9,7 @@ html {
 }
 // ---------------- HEADER SECTION -----------------------
 #home {
-    background-image: url(../images/header-image-lg.jpg);
+    background-image: url(../images/header-image-lg.webp);
     background-color: gray;
     position: relative;
     text-align: center;
@@ -25,7 +25,7 @@ html {
     //     background-image: url(../images/header-bg-med.jpg);
     // }
     @include lg-screens {
-        background-image: url(../images/header-image-origin.jpg);
+        background-image: url(../images/header-image-origin.webp);
     }
     .name {
         margin-top: 0;
