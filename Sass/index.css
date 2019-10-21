@@ -517,6 +517,52 @@ template {
   }
 }
 
+@-webkit-keyframes outer-sundance {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  50% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  75% {
+    -webkit-transform: scale(0.97);
+            transform: scale(0.97);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes outer-sundance {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  50% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  75% {
+    -webkit-transform: scale(0.97);
+            transform: scale(0.97);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 html {
   font-family: "Raleway", sans-serif;
 }
@@ -530,25 +576,47 @@ html {
   color: white;
 }
 
+.header-svg {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .header-svg {
+    width: 100%;
+  }
+}
+
+.outer-sun-radius {
+  -webkit-animation: outer-sundance 7s ease infinite;
+          animation: outer-sundance 7s ease infinite;
+  -webkit-transform-origin: 75% 225%;
+          transform-origin: 75% 225%;
+}
+
+.inner-sun-radius {
+  -webkit-transform-origin: 75% 225%;
+          transform-origin: 75% 225%;
+  -webkit-animation: outer-sundance 10s ease infinite;
+          animation: outer-sundance 10s ease infinite;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
 #home {
-  background-image: url(../images/header-image-lg.webp);
-  background-color: gray;
   position: relative;
   text-align: center;
   height: 100vh;
   color: white;
   background-attachment: fixed;
-  background-color: lightgray;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
   overflow: hidden;
-}
-
-@media (min-width: 1024px) {
-  #home {
-    background-image: url(../images/header-image-origin.webp);
-  }
 }
 
 #home .name {
@@ -770,7 +838,7 @@ main .project-container {
 @media (max-width: 767px) {
   main .project-container::before {
     content: "";
-    z-index: -1;
+    z-index: -2;
     position: fixed;
     top: 0;
     right: 0;

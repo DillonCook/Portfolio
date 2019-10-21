@@ -8,25 +8,47 @@ html {
     color: rgb(255, 255, 255);
 }
 // ---------------- HEADER SECTION -----------------------
+
+.header-svg {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    @include med-screens {
+        width: 100%;
+    }
+}
+
+.outer-sun-radius {
+    animation: outer-sundance 7s ease infinite;
+    transform-origin: 75% 225%;
+}
+
+.inner-sun-radius {
+    transform-origin: 75% 225%;
+    animation: outer-sundance 10s ease infinite;
+    transform: scale(.9);
+}
+
+// .sun {
+// }
+
 #home {
-    background-image: url(../images/header-image-lg.webp);
-    background-color: gray;
+    // background-image: url(../images/drawing-1.svg);
     position: relative;
     text-align: center;
     height: 100vh;
     color: white;
     background-attachment: fixed;
-    background-color: lightgray;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     overflow: hidden;
     // @include med-screens {
-    //     background-image: url(../images/header-bg-med.jpg);
+
     // }
-    @include lg-screens {
-        background-image: url(../images/header-image-origin.webp);
-    }
     .name {
         margin-top: 0;
         padding-top: 170px;
@@ -181,7 +203,7 @@ main {
         &::before {
             @include sm-screens-only {
                 content: "";
-                z-index: -1;
+                z-index: -2;
                 position: fixed;
                 top: 0;
                 right: 0;
