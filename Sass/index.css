@@ -850,22 +850,6 @@ main .project-container {
   }
 }
 
-@media (min-width: 768px) {
-  main .project-container {
-    background-image: url(../images/sand-lg_1_1024x.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: lightgray;
-    background-repeat: no-repeat;
-  }
-}
-
-@media (min-width: 1024px) {
-  main .project-container {
-    background-image: url(../images/sand-lg.jpg);
-  }
-}
-
 main h1 {
   margin-top: 0;
   padding: 30px 0;
