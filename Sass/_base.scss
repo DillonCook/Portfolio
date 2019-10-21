@@ -194,6 +194,9 @@ html {
 
 // ------------------------- PROJECT SECTION ----------------------------
 main {
+    .project-container {
+        position: relative;
+    }
 
     h1 {
         margin-top: 0;

@@ -829,6 +829,10 @@ html {
   }
 }
 
+main .project-container {
+  position: relative;
+}
+
 main h1 {
   margin-top: 0;
   padding: 30px 0;
