@@ -22,19 +22,17 @@ html {
     }
 }
 
-.outer-sun-radius {
+#outer-sun-radius {
     animation: outer-sundance 7s ease infinite;
     transform-origin: 75% 225%;
 }
 
-.inner-sun-radius {
+#inner-sun-radius {
     transform-origin: 75% 225%;
     animation: outer-sundance 10s ease infinite;
     transform: scale(.9);
 }
 
-// .sun {
-// }
 
 #home {
     // background-image: url(../images/drawing-1.svg);
@@ -196,35 +194,6 @@ html {
 
 // ------------------------- PROJECT SECTION ----------------------------
 main {
-    .project-container {
-        background-position-y: 100%;
-        padding-bottom: 50px;
-        position: relative;
-        &::before {
-            @include sm-screens-only {
-                content: "";
-                z-index: -2;
-                position: fixed;
-                top: 0;
-                right: 0;
-                bottom: -15%;
-                left: 0;
-                background-image: url(../images/sand-lg_768x.jpg);
-                background-size: cover;
-                background-color: lightgray;
-            }
-        }
-        // @include med-screens {
-        //     background-image: url(../images/sand-lg_1_1024x.jpg);
-        //     background-attachment: fixed;
-        //     background-size: cover;
-        //     background-color: lightgray;
-        //     background-repeat: no-repeat;
-        // }
-        // @include lg-screens {
-        //     background-image: url(../images/sand-lg.jpg);
-        // }
-    }
 
     h1 {
         margin-top: 0;
@@ -271,6 +240,7 @@ main {
 footer {
     background-color: $darker-blue;
     text-align: center;
+    padding-bottom: 50px;
     .container {
         display: flex;
         flex-direction: column;
@@ -315,11 +285,15 @@ footer {
     a {
         text-decoration: none;
     }
+
+    .social-svg {
+        margin: 20px;
+    }
+
     svg {
         width: 50px;
-        margin: 10px 20px 40px;
         border-radius: 50%;
-        transition: all .5s ease;
+        margin-top: 20px;
     }
     .github {
         cursor: pointer;
@@ -329,7 +303,6 @@ footer {
         
     }
     .linkedin {
-        cursor: pointer;
-        
+        cursor: pointer;  
     }
 }
