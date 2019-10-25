@@ -12,13 +12,10 @@ html {
 .header-svg {
     position: fixed;
     z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    height: 100vh;
     left: 0;
-    height: 100%;
-    @include med-screens {
-        width: 100%;
+    @include lg-screens {
+        width: 100vw;
     }
 }
 
@@ -35,18 +32,11 @@ html {
 
 
 #home {
-    // background-image: url(../images/drawing-1.svg);
     position: relative;
     text-align: center;
     height: 100vh;
     color: white;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
     overflow: hidden;
-    // @include med-screens {
-
-    // }
     .name {
         margin-top: 0;
         padding-top: 170px;
@@ -108,14 +98,14 @@ html {
         left: 0;
         right: 0;
         margin-bottom: 0;
-        background-color: rgba(212, 212, 212, 0.7);
+        background-color: rgba(238, 238, 238, 0.5);
         text-shadow: 0 2px 5px black;
         font-size: 1.5em;
         transition: background-color .3s ease, color .3s ease;
         animation: opposite-entrance 1s ease 1;
         &:hover {
             color: darken($color: white, $amount: 10%);
-            background-color: darken($color: rgba(212, 212, 212, 0.7), $amount: 10%);
+            background-color: darken($color: rgba(238, 238, 238, 0.7), $amount: 10%);
             cursor: pointer;
         }
 
@@ -205,11 +195,11 @@ main {
         color: white;
         text-align: center;
         text-shadow: 0 2px 5px black;
-        background-color: rgba(212, 212, 212, 0.5);
+        background-color: rgba(238, 238, 238, 0.5);
         transition: color .3s ease, background-color .3s ease;
         &:hover {
             color: darken($color: white, $amount: 10%);
-            background-color: darken($color: rgba(212, 212, 212, 0.5), $amount: 10%);
+            background-color: darken($color: rgba(238, 238, 238, 0.7), $amount: 10%);
             cursor: pointer;
         }
     }
